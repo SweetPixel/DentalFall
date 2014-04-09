@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Hero\Padmove.cs">
+    <Files>
+      <File FileName="Assets\Hero\Padmove.cs" Line="39" Column="18" />
+      <File FileName="Assets\Enemy\EnemiesDrop.cs" Line="22" Column="3" />
+      <File FileName="Assets\Manager\GUIManager.cs" Line="21" Column="49" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
