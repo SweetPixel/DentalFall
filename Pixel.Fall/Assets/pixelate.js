@@ -13,3 +13,4 @@ if(col.gameObject.name=="enemy(Clone)")
 {
 Destroy(col.gameObject);
 }
+}
