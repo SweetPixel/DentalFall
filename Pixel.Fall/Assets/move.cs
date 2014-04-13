@@ -4,7 +4,7 @@ using System.Collections;
 
 public class move : MonoBehaviour {
 	private Vector3 screenpoint;
-	 int i=5;
+	 int i=7;
 	private Vector3 offset;
 
 	// Use this for initialization
