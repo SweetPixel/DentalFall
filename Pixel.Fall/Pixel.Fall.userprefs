@@ -1,8 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\move.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\enemyFall.js">
     <Files>
-      <File FileName="Assets\move.cs" Line="9" Column="2" />
+      <File FileName="Assets\enemyFall.js" Line="1" Column="1" />
+      <File FileName="Assets\enemyFall.js" Line="1" Column="1" />
+      <File FileName="Assets\destroy enemy.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
