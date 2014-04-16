@@ -4,9 +4,12 @@
     <Files>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <File FileName="Assets\destroy enemy.js" Line="15" Column="12" />
       <File FileName="Assets\enemyFall.js" Line="16" Column="18" />
 =======
+=======
+>>>>>>> e6a14f8d095d8e4322201762de4a662a0772702a
 =======
 >>>>>>> e6a14f8d095d8e4322201762de4a662a0772702a
       <File FileName="Assets\pixelate1.js" Line="1" Column="1" />
