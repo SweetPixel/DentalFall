@@ -49,7 +49,7 @@
      <Compile Include="Assets\destroy enemy.js" />
      <Compile Include="Assets\destroy.js" />
      <Compile Include="Assets\enemyFall.js" />
-     <Compile Include="Assets\pixelate.js" />
+     <Compile Include="Assets\pixelate1.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
