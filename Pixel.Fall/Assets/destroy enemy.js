@@ -15,16 +15,4 @@ if(col.gameObject.name=="enemy(Clone)")
 Destroy(col.gameObject);
 score++;
 }
-
-if(col.gameObject.name=="enemy2(Clone)")
-{
-Destroy(col.gameObject);
-score++;
-}
-
-if(col.gameObject.name=="enemy3(Clone)")
-{
-Destroy(col.gameObject);
-score++;
-}
 }
