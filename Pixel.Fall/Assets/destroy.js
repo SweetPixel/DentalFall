@@ -9,7 +9,7 @@ function Update () {
 }
 function OnCollisionEnter(col : Collision)
 {
-if(col.gameObject.name=="boundry" || col.gameObject.name=="enemy"||col.gameObject.name=="enemy2"||col.gameObject.name=="enemy3"||col.gameObject.name=="enemy(Clone)" ||col.gameObject.name=="enemy2(Clone)"||col.gameObject.name=="enemy3(Clone)"||col.gameObject.name=="floor" )
+if(col.gameObject.name=="boundry" || col.gameObject.name=="ishape"||col.gameObject.name=="ishape(Clone)"||col.gameObject.name=="squareshape(Clone)"||col.gameObject.name=="squareshape" ||col.gameObject.name=="Lshape(Clone)"||col.gameObject.name=="Lshape"||col.gameObject.name=="deadshape(Clone)"||col.gameObject.name=="deadshape"||col.gameObject.name=="floor" )
 {
 Application.LoadLevel("gameover");
 }
