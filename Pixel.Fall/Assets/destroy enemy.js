@@ -36,19 +36,9 @@ Destroy(col.gameObject);
 score++;
 }
 if(col.gameObject.name=="deadshape(Clone)")
-=======
->>>>>>> 01469f933bf6684d32f3eb087c746061d51785f5
 {
 Destroy(col.gameObject);
 score++;
 }
-<<<<<<< HEAD
-=======
-if(col.gameObject.name=="deadshape(Clone)")
-{
-Destroy(col.gameObject);
-score++;
-}
->>>>>>> 01469f933bf6684d32f3eb087c746061d51785f5
 
 }
