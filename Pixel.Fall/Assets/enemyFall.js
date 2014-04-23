@@ -10,14 +10,20 @@ var timer: float=0.0;
 
 function Start () {
 
+
 }
 
 function Update () {
+var r : Rect = camera.pixelRect;
+Debug.Log("Camera displays from " + r.xMin + " to " + r.xMax + " pixel");
 timer+=Time.deltaTime;
-if (timer > 0.09){
+if (timer > 0.1){
 Spawn();}
 }
 function Spawn(){
+
+var r : Rect = camera.pixelRect;
+Debug.Log("Camera displays from " + r.xMin + " to " + r.xMax + " pixel");
 var randomPick : int = Mathf.Abs(Random.Range(0,5));
 var pos:Vector3 = new Vector3(Random.Range(-10.0F,10.0F),7.709583,-3.021553F);
 timer=0;

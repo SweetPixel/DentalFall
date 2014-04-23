@@ -6,7 +6,7 @@ public class move : MonoBehaviour {
 	private Vector3 screenpoint;
 	 int i=7;
 	private Vector3 offset;
-
+	private float screenx = Screen.width -20;
 	// Use this for initialization
 	void Start () {
 		rigidbody.velocity=Vector3.down*i;
