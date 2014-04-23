@@ -35,7 +35,11 @@ Spawn();}
 }
 function Spawn(){
 var randomPick : int = Mathf.Abs(Random.Range(0,5));
+<<<<<<< HEAD
 var pos:Vector3 = new Vector3(Random.Range(-(width),width),7.7095830F,-3.021553F);
+=======
+var pos:Vector3 = new Vector3(Random.Range(-10.0F,10.0F),7.709583,-3.021553F);
+>>>>>>> 01469f933bf6684d32f3eb087c746061d51785f5
 timer=0;
 if(randomPick == 1){
 
