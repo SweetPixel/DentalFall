@@ -30,7 +30,6 @@ score++;
 }
 
 if(col.gameObject.name=="Lshape(Clone)")
-<<<<<<< HEAD
 {
 Destroy(col.gameObject);
 score++;
