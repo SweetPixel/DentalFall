@@ -1,10 +1,17 @@
 ﻿#pragma strict
 
-function Start () {
-
-}
 var score:int=0;
 var scoretext: GUIText;
+
+function Start () {
+	var height = Camera.main.camera.orthographicSize;
+	var width = height * Screen.width / Screen.height;
+	
+	var gameW = width / 10;
+	scoretext.fontSize = gameW;
+	
+}
+
 function Update () {
 scoretext.text= " "+ score;
 }
