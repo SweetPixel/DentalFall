@@ -7,9 +7,26 @@ var enemy2 : Transform;
 var enemy3 : Transform;
 var enemy4 : Transform;	
 var timer: float=0.0;
+var width : float;
+var hero: GameObject;
+
+
+
 
 function Start () {
-
+	var height = Camera.main.camera.orthographicSize;
+	width = height * Screen.width / Screen.height;
+	
+	Debug.Log(" " + width);
+	
+	var gameW = width / 3;
+	
+	hero.transform.localScale = new Vector3(gameW, gameW, 0);
+	
+	enemy1.transform.localScale = new Vector3(gameW, gameW, 0);
+	enemy2.transform.localScale = new Vector3(gameW, gameW, 0);
+	enemy3.transform.localScale = new Vector3(gameW, gameW, 0);
+	enemy4.transform.localScale = new Vector3(gameW, gameW, 0);	
 
 }
 
@@ -17,7 +34,11 @@ function Update () {
 var r : Rect = camera.pixelRect;
 Debug.Log("Camera displays from " + r.xMin + " to " + r.xMax + " pixel");
 timer+=Time.deltaTime;
-if (timer > 0.1){
+
+
+
+if (timer > 0.2){
+
 Spawn();}
 }
 function Spawn(){
@@ -25,7 +46,7 @@ function Spawn(){
 var r : Rect = camera.pixelRect;
 Debug.Log("Camera displays from " + r.xMin + " to " + r.xMax + " pixel");
 var randomPick : int = Mathf.Abs(Random.Range(0,5));
-var pos:Vector3 = new Vector3(Random.Range(-10.0F,10.0F),7.709583,-3.021553F);
+var pos:Vector3 = new Vector3(Random.Range(-(width),width),7.7095830F,-3.021553F);
 timer=0;
 if(randomPick == 1){
 
