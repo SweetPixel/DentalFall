@@ -15,6 +15,7 @@ function Start () {
 }
 
 function Update () {
+PlayerPrefs.SetInt("Player Score",score);
 scoretext.text= " "+ score;
 }
 function OnCollisionEnter(col : Collision)
