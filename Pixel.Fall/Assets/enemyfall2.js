@@ -3,7 +3,9 @@
 var enemy1 : Transform;	
 var enemy2 : Transform;	
 var enemy3 : Transform;
-var enemy4 : Transform;	
+var enemy4 : Transform;
+var Enemy1 : GameObject;
+	
 var timer: float=0.0;
 var width : float;
 var hero: GameObject;
@@ -21,6 +23,7 @@ function Start () {
 	enemy2.transform.localScale = new Vector3(gameW, gameW, 0);
 	enemy3.transform.localScale = new Vector3(gameW, gameW, 0);
 	enemy4.transform.localScale = new Vector3(gameW, gameW, 0);
+	
 	Spawn();
 }
 
@@ -38,6 +41,7 @@ timer=0;
 if(randomPick == 1){
 
 //var forward=transform.TransformDirection(Vector3.down);
+
 				Instantiate(enemy1,pos,Quaternion.identity);
 }
 else if(randomPick == 2){
@@ -52,7 +56,8 @@ else if(randomPick == 3){
 else if(randomPick == 4){
 //var forward=transform.TransformDirection(Vector3.down);
 				Instantiate(enemy4,pos,Quaternion.identity);
-}					
-yield WaitForSeconds(Random.Range(0.2,0.6))	;	
+}
+					
+yield WaitForSeconds(Random.Range(0.2,0.4))	;	
 }
 }
