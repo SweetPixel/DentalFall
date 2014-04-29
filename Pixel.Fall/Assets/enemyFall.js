@@ -12,7 +12,6 @@ var hero: GameObject;
 
 
 
-
 function Start () {
 	var height = Camera.main.camera.orthographicSize;
 	width = height * Screen.width / Screen.height;
@@ -35,34 +34,42 @@ var r : Rect = camera.pixelRect;
 Debug.Log("Camera displays from " + r.xMin + " to " + r.xMax + " pixel");
 timer+=Time.deltaTime;
 
+var move = Input.GetAxis("Horizontal");
 
-
-if (timer > 0.2){
+if (timer > 0.5 - move){
 
 Spawn();}
 }
+
 function Spawn(){
 
 var r : Rect = camera.pixelRect;
 Debug.Log("Camera displays from " + r.xMin + " to " + r.xMax + " pixel");
 var randomPick : int = Mathf.Abs(Random.Range(0,5));
-var pos:Vector3 = new Vector3(Random.Range(-(width),width),7.7095830F,-3.021553F);
+var pos:Vector2 = new Vector2(Random.Range(-(width),width),7.7095830F);
+
+var lastRandom: int = 0;
+
 timer=0;
-if(randomPick == 1){
+if(randomPick == 1 && lastRandom != 1){
 
 //var forward=transform.TransformDirection(Vector3.down);
 				Instantiate(enemy1,pos,Quaternion.identity);
+				lastRandom = 1;
 }
-else if(randomPick == 2){
+else if(randomPick == 2 && lastRandom != 2){
 //var forward=transform.TransformDirection(Vector3.down);
 				Instantiate(enemy2,pos,Quaternion.identity);
+				lastRandom = 2;
 }
-else if(randomPick == 3){
+else if(randomPick == 3 && lastRandom != 3){
 //var forward=transform.TransformDirection(Vector3.down);
 				Instantiate(enemy3,pos,Quaternion.identity);
+				lastRandom = 3;
 }								
-else if(randomPick == 4){
+else if(randomPick == 4 && lastRandom != 4){
 //var forward=transform.TransformDirection(Vector3.down);
 				Instantiate(enemy4,pos,Quaternion.identity);
+				lastRandom = 4;
 }							
 }
