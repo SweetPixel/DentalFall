@@ -5,19 +5,22 @@ var enemy2 : Transform;
 var enemy3 : Transform;
 var enemy4 : Transform;
 var Enemy1 : GameObject;
-	
+	var category : String;
+	var action : String;
+	var val : int;
 var timer: float=0.0;
 var width : float;
 var hero: GameObject;
 var i :int = 0;
-
+var guiscore:TextMesh;
+//private var csScript : GoogleAnalyticsHelper;
 
 
 function Start () {
+//csScript = this.GetComponent("GoogleAnalyticsHelper");
 	var height = Camera.main.camera.orthographicSize;
 	width = height * Screen.width / Screen.height;
-	Debug.Log(" " + width);
-	var gameW = width / 3;
+	var gameW = width / 4;
 	hero.transform.localScale = new Vector3(gameW, gameW, 0);
 	enemy1.transform.localScale = new Vector3(gameW, gameW, 0);
 	enemy2.transform.localScale = new Vector3(gameW, gameW, 0);
@@ -25,8 +28,22 @@ function Start () {
 	enemy4.transform.localScale = new Vector3(gameW, gameW, 0);
 	
 	Spawn();
-}
+	
 
+}
+function logEvent (category, action, val){
+if (Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
+GoogleAnalyticsHelper.LogEvent("mainScene",category,action,"label",val);
+}
+function Awake(){
+
+Application.targetFrameRate = 60;
+QualitySettings.vSyncCount = 2;
+//if (Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork){
+  //  GoogleAnalyticsHelper.Settings("UA-50966088-2", "http://www.pixelfallgame.com");
+    //logEvent ("game", "start", 0);}
+
+}
 function Update () {
 
 }
@@ -35,7 +52,7 @@ function Spawn(){
 for (i=0; i<1000; i++){
 
 var randomPick : int = Mathf.Abs(Random.Range(0,5));
-var pos:Vector3 = new Vector3(Random.Range(-(width),width),7.7095830F,-3.021553F);
+var pos:Vector3 = new Vector3(Random.Range(-(width-0.2),width-0.2),7.0F,-3.021553F);
 timer=0;
 ;
 if(randomPick == 1){
