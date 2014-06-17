@@ -16,7 +16,7 @@ public class move : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigidbody.velocity=Vector3.down*i;
-		height = Camera.main.camera.orthographicSize;
+	height = Camera.main.camera.orthographicSize;
 		width = height * Screen.width / Screen.height;
 	}
 	
