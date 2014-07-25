@@ -7,8 +7,6 @@ public class move : MonoBehaviour {
 	 int i=7;
 	private Vector3 offset;
 
-	private float screenx = Screen.width -20;
-
 	float height;
 	float width;
 
@@ -35,11 +33,12 @@ public class move : MonoBehaviour {
 	
 	void OnMouseDrag()
 	{
-		if(Input.mousePosition.x < width || Input.mousePosition.x > (-width)){
+		if(Input.touchCount<2){
+		if(Input.mousePosition.x > width || Input.mousePosition.x < (-width)){
 		Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenpoint.z);
 		
 		Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
 		transform.position = curPosition;
-		}
+			}}
 	}
 }

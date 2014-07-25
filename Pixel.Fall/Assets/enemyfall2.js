@@ -5,19 +5,18 @@ var enemy2 : Transform;
 var enemy3 : Transform;
 var enemy4 : Transform;
 var Enemy1 : GameObject;
-	var category : String;
-	var action : String;
-	var val : int;
+	
 var timer: float=0.0;
 var width : float;
 var hero: GameObject;
 var i :int = 0;
 var guiscore:TextMesh;
-//private var csScript : GoogleAnalyticsHelper;
 
+var count_tut : int =0;
 
 function Start () {
-//csScript = this.GetComponent("GoogleAnalyticsHelper");
+
+PlayerPrefs.SetInt("tutorial",count_tut);
 	var height = Camera.main.camera.orthographicSize;
 	width = height * Screen.width / Screen.height;
 	var gameW = width / 4;
@@ -29,20 +28,14 @@ function Start () {
 	
 	Spawn();
 	
-
-}
-function logEvent (category, action, val){
-if (Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
-GoogleAnalyticsHelper.LogEvent("mainScene",category,action,"label",val);
 }
 function Awake(){
-
+Input.multiTouchEnabled = false;
+if(Application.platform== RuntimePlatform.IPhonePlayer)
+{	
 Application.targetFrameRate = 60;
 QualitySettings.vSyncCount = 2;
-//if (Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork){
-  //  GoogleAnalyticsHelper.Settings("UA-50966088-2", "http://www.pixelfallgame.com");
-    //logEvent ("game", "start", 0);}
-
+}
 }
 function Update () {
 

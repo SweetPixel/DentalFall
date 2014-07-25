@@ -1,21 +1,13 @@
-﻿#pragma strict
-var coin : AudioClip;
+﻿
+var text1: GUIText;
+var text2: GUIText;
 
-
-function Start () {
-
-}
-
-function Update () {
-
-}
-function OnCollisionEnter(col : Collision)
+function Start () 
 {
-audio.clip = coin;
-audio.Play();
-audio.volume = 1.0;
-if(col.gameObject.name=="ishape"||col.gameObject.name=="ishape(Clone)"||col.gameObject.name=="squareshape(Clone)"||col.gameObject.name=="squareshape" ||col.gameObject.name=="Lshape(Clone)"||col.gameObject.name=="Lshape"||col.gameObject.name=="deadshape(Clone)"||col.gameObject.name=="deadshape"||col.gameObject.name=="floor" )
-{
-Application.LoadLevel("SaveIt");
-}
+text1.text ="HOLD";
+text2.text = " ";
+yield WaitForSeconds(2.5);
+text1.text=" ";
+text2.text="DO NOT COLLIDE";
+
 }

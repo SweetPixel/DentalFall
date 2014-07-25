@@ -24,7 +24,7 @@ gamecrashtext.text = "CRASHING IN  " + countdown;
 function Update(){
  if (displayLabel == true)
 {
-gameover.fontSize=50;
+
  gameover.text="GAME\n OVER";
 }
  else
@@ -54,16 +54,3 @@ while (1) {
 }
 
  
-
-function OnGUI() {
-
- 
-
- if (displayLabel == true)
-{
-gameover.fontSize=50;
- gameover.text="GAME\n OVER";
-}
- else
- gameover.text = " ";
-}

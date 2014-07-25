@@ -1,0 +1,203 @@
+fileFormatVersion: 2
+guid: 525cb90131d327e44ac54601f68b8b40
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Birth 001
+    100002: Birth 002
+    100004: Birth 003
+    100006: Box308
+    100008: Camera001
+    100010: Collision Spawn 001
+    100012: Delete 001
+    100014: Delete 002
+    100016: Delete 003
+    100018: Delete 004
+    100020: Display 001
+    100022: Display 002
+    100024: Display 003
+    100026: Display 004
+    100028: Display 005
+    100030: Display 006
+    100032: Display 007
+    100034: Event 001
+    100036: Event 002
+    100038: Event 003
+    100040: Event 004
+    100042: Event 005
+    100044: Event 006
+    100046: Event 007
+    100048: Material Static 001
+    100050: Particle View 001
+    100052: PF Arrow001
+    100054: Position Icon 001
+    100056: Position Icon 002
+    100058: Position Icon 003
+    100060: Position Object 001
+    100062: Rectangle001
+    100064: Render 001
+    100066: Render 002
+    100068: Render 003
+    100070: Rotation 001
+    100072: Rotation 002
+    100074: Rotation 003
+    100076: Shape 001
+    100078: Shape Instance 001
+    100080: Shape Instance 002
+    100082: Shape Instance 003
+    100084: Shape1
+    100086: Single
+    100088: Single001
+    100090: Single002
+    100092: Single003
+    100094: Single004
+    100096: Spawn 001
+    100098: Speed 002
+    100100: Speed 003
+    100102: Speed 004
+    100104: Speed 005
+    100106: Torus001
+    100108: Torus002
+    100110: //RootNode
+    400000: Birth 001
+    400002: Birth 002
+    400004: Birth 003
+    400006: Box308
+    400008: Camera001
+    400010: Collision Spawn 001
+    400012: Delete 001
+    400014: Delete 002
+    400016: Delete 003
+    400018: Delete 004
+    400020: Display 001
+    400022: Display 002
+    400024: Display 003
+    400026: Display 004
+    400028: Display 005
+    400030: Display 006
+    400032: Display 007
+    400034: Event 001
+    400036: Event 002
+    400038: Event 003
+    400040: Event 004
+    400042: Event 005
+    400044: Event 006
+    400046: Event 007
+    400048: Material Static 001
+    400050: Particle View 001
+    400052: PF Arrow001
+    400054: Position Icon 001
+    400056: Position Icon 002
+    400058: Position Icon 003
+    400060: Position Object 001
+    400062: Rectangle001
+    400064: Render 001
+    400066: Render 002
+    400068: Render 003
+    400070: Rotation 001
+    400072: Rotation 002
+    400074: Rotation 003
+    400076: Shape 001
+    400078: Shape Instance 001
+    400080: Shape Instance 002
+    400082: Shape Instance 003
+    400084: Shape1
+    400086: Single
+    400088: Single001
+    400090: Single002
+    400092: Single003
+    400094: Single004
+    400096: Spawn 001
+    400098: Speed 002
+    400100: Speed 003
+    400102: Speed 004
+    400104: Speed 005
+    400106: Torus001
+    400108: Torus002
+    400110: //RootNode
+    2300000: Box308
+    2300002: Rectangle001
+    2300004: Shape1
+    2300006: Single
+    2300008: Single001
+    2300010: Single002
+    2300012: Single003
+    2300014: Single004
+    2300016: Torus001
+    2300018: Torus002
+    3300000: Box308
+    3300002: Rectangle001
+    3300004: Shape1
+    3300006: Single
+    3300008: Single001
+    3300010: Single002
+    3300012: Single003
+    3300014: Single004
+    3300016: Torus001
+    3300018: Torus002
+    4300000: Rectangle001
+    4300002: Single
+    4300004: Single001
+    4300006: Shape1
+    4300008: Single002
+    4300010: Single003
+    4300012: Single004
+    4300014: Torus001
+    4300016: Torus002
+    4300018: Box308
+    7400000: Icon_Assets
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

@@ -9,7 +9,6 @@ public class catch_save2 : MonoBehaviour {
 	int i=7;
 	private Vector3 offset;
 	bool status = false;
-	private float screenx = Screen.width -20;
 	
 	float height;
 	float width;
@@ -24,11 +23,11 @@ public class catch_save2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(status)
-		if(DateTime.Now > dt){
+		//if(status)
+		//if(DateTime.Now > dt){
 			
-			Application.LoadLevel("awesome");
-		}
+	//		Application.LoadLevel("awesome");
+	//	}
 	}
 	void OnMouseDown()
 	{
@@ -44,14 +43,14 @@ public class catch_save2 : MonoBehaviour {
 	
 	
 	void OnMouseDrag()
-	{
+	{if(Input.touchCount<2){
 		if(Input.mousePosition.x < width || Input.mousePosition.x > (-width)){
 			Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenpoint.z);
 			
 			Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
 			transform.position = curPosition;
 		}
-	}
+		}}
 	
 	//public static void MyDelay(int seconds)
 	

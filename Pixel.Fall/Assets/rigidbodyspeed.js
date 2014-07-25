@@ -8,7 +8,7 @@ rigidbody.AddForce(Vector3.down * 0.2);
 
 function Update () {
 score =  PlayerPrefs.GetInt("PlayerScore");
-if(score>0){
+if((score>0) && (score<50)){
 speed = score / 1.4;
 rigidbody.AddForce(Vector3.down * speed);
 
