@@ -21,7 +21,7 @@ function Start () {
 
 // Authenticate and register a ProcessAuthentication callback
     // This call needs to be made before we can proceed to other calls in the Social API
-	Social.localUser.Authenticate (ProcessAuthentication);
+//	Social.localUser.Authenticate (ProcessAuthentication);
 	
 
 PlayerPrefs.SetInt("tutorial",count_tut);
@@ -35,6 +35,8 @@ PlayerPrefs.SetInt("tutorial",count_tut);
 	enemy4.transform.localScale = new Vector3(gameW, gameW, 0);
 	
 	Spawn();
+	
+	
 	
 }
 
