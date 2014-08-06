@@ -1,5 +1,7 @@
 ﻿#pragma strict
 
+import UnityEngine.SocialPlatforms;
+
 var enemy1 : Transform;	
 var enemy2 : Transform;	
 var enemy3 : Transform;
@@ -16,6 +18,12 @@ var count_tut : int =0;
 
 function Start () {
 
+
+// Authenticate and register a ProcessAuthentication callback
+    // This call needs to be made before we can proceed to other calls in the Social API
+//	Social.localUser.Authenticate (ProcessAuthentication);
+	
+
 PlayerPrefs.SetInt("tutorial",count_tut);
 	var height = Camera.main.camera.orthographicSize;
 	width = height * Screen.width / Screen.height;
@@ -28,25 +36,55 @@ PlayerPrefs.SetInt("tutorial",count_tut);
 	
 	Spawn();
 	
+	
+	
+}
+
+function ProcessAuthentication (success: boolean) {
+    if (success) {
+        Debug.Log ("Authenticated, checking achievements");
+
+        // Request loaded achievements, and register a callback for processing them
+        Social.LoadAchievements (ProcessLoadedAchievements);
+    }
+    else
+        Debug.Log ("Failed to authenticate");
+}
+
+// This function gets called when the LoadAchievement call completes
+function ProcessLoadedAchievements (achievements: IAchievement[]) {
+    if (achievements.Length == 0)
+        Debug.Log ("Error: no achievements found");
+    else
+        Debug.Log ("Got " + achievements.Length + " achievements");
+    
+    // You can also call into the functions like this
+    Social.ReportProgress ("Achievement01", 100.0, function(result) {
+        if (result)
+            Debug.Log ("Successfully reported achievement progress");
+        else
+            Debug.Log ("Failed to report achievement");
+    });
+
 }
 function Awake(){
-Input.multiTouchEnabled = false;
-if(Application.platform== RuntimePlatform.IPhonePlayer)
-{	
-Application.targetFrameRate = 60;
-QualitySettings.vSyncCount = 2;
-}
+	Input.multiTouchEnabled = false;
+	if(Application.platform== RuntimePlatform.IPhonePlayer)
+	{	
+		Application.targetFrameRate = 60;
+		QualitySettings.vSyncCount = 2;
+	}
 }
 function Update () {
 
 }
 
 function Spawn(){
-for (i=0; i<1000; i++){
+	for (i=0; i<1000; i++){
 
-var randomPick : int = Mathf.Abs(Random.Range(0,5));
-var pos:Vector3 = new Vector3(Random.Range(-(width-0.2),width-0.2),7.0F,-3.021553F);
-timer=0;
+		var randomPick : int = Mathf.Abs(Random.Range(0,5));
+		var pos:Vector3 = new Vector3(Random.Range(-(width-0.2),width-0.2),7.0F,-3.021553F);
+		timer=0;
 ;
 if(randomPick == 1){
 
