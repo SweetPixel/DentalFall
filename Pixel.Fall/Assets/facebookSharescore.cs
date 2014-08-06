@@ -354,7 +354,6 @@ public sealed class facebookSharescore : MonoBehaviour
 		tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
 		tex.Apply();
 		byte[] screenshot = tex.EncodeToPNG();
-		
 		var wwwForm = new WWWForm();
 		wwwForm.AddBinaryData("image", screenshot, "facebookSharescore.png");
 		wwwForm.AddField("message", "my high score....");
