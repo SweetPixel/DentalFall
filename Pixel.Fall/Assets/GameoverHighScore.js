@@ -19,11 +19,11 @@ function Start () {
     		PlayGamesPlatform.DebugLogEnabled = true;
     		// Activate the Google Play Games platform
     		PlayGamesPlatform.Activate();
-    		LumosAnalytics.RecordEvent("GPLAy-Initialized");
+    		Debug.Log("Seems Activated");
     	}
     	catch(UnityException e)
     	{
-    		Debug.Log(e);
+    		Debug.Log("An Exception Occured");
     	}
     #endif
     
