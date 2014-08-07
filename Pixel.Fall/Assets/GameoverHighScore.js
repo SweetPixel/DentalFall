@@ -14,10 +14,17 @@ function Start () {
     
     #if UNITY_Android
     	// recommended for debugging:
-    	PlayGamesPlatform.DebugLogEnabled = true;
-
-    	// Activate the Google Play Games platform
-    	PlayGamesPlatform.Activate();
+    	try {
+    	
+    		PlayGamesPlatform.DebugLogEnabled = true;
+    		// Activate the Google Play Games platform
+    		PlayGamesPlatform.Activate();
+    		LumosAnalytics.RecordEvent("GPLAy-Initialized");
+    	}
+    	catch(UnityException e)
+    	{
+    		Debug.Log(e);
+    	}
     #endif
     
 	Social.localUser.Authenticate (ProcessAuthentication);
