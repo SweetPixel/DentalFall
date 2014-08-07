@@ -1,6 +1,8 @@
 ﻿#pragma strict
 import UnityEngine;
-import GooglePlayGames;
+#if UNITY_Android
+	import GooglePlayGames;
+#endif
 
 var HighScore : GUIText;
 var explosion : AudioClip;
