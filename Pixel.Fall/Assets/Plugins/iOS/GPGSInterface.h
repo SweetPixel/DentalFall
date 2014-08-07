@@ -13,14 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+// Author: Bruno Oliveira
 
-#if UNITY_IPHONE
-using System;
-
-// Attribute that the AOT compiler understands as "this method will
-// be called as a callback from native code". Needed on iOS.
-public class MonoPInvokeCallbackAttribute : System.Attribute
-{
-    public MonoPInvokeCallbackAttribute(Type t) {}
-}
-#endif
+#import <Foundation/Foundation.h>
