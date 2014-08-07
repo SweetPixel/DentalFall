@@ -23,7 +23,7 @@ public class GoogleMobileAdsDemoScript : MonoBehaviour
 		#elif UNITY_ANDROID
 		string adUnitId = "ca-app-pub-2687500040121509/7094207878";
 		#elif UNITY_IPHONE
-		string adUnitId = "INSERT_IOS_BANNER_AD_UNIT_ID_HERE";
+		string adUnitId = "ca-app-pub-2687500040121509/3286130276";
 		#else
 		string adUnitId = "unexpected_platform";
 		#endif
