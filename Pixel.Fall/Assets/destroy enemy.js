@@ -11,10 +11,12 @@ guiscore.active=true;
 	var gameW = width / 3.2;
 	var gameH = height / 95;
 //	scoretext.transform.localPosition = new Vector3(gameH, gameW+0.1, 0);
-	
+	      //RESET HIGHSCORE
+	//PlayerPrefs.SetInt("HighScore",0);
 }
 
 function Update () {
+
 guiscore.text= score.ToString();
 var temp2 : int;
 PlayerPrefs.SetInt("PlayerScore",score);
@@ -62,5 +64,4 @@ if(col.gameObject.name=="deadshape")
 {
 Destroy(col.gameObject);
 }
-
 }

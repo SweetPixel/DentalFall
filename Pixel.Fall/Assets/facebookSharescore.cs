@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading;
 
 public sealed class facebookSharescore : MonoBehaviour
 {
-	private int counter=0;
+
 	#region FB.Init() example
 	
 	private bool isInit = false;
@@ -51,6 +52,7 @@ public sealed class facebookSharescore : MonoBehaviour
 		}
 		else
 		{
+			onBragClicked();
 			lastResponse = "Login was successful!";
 		}
 	}
@@ -359,7 +361,7 @@ public sealed class facebookSharescore : MonoBehaviour
 		wwwForm.AddBinaryData("image", screenshot, "facebookSharescore.png");
 		wwwForm.AddField("message", "my high score....");
 		
-		FB.API("me/photos", Facebook.HttpMethod.POST, Callback, wwwForm);
+		FB.API("me/PixelFall", Facebook.HttpMethod.POST, Callback, wwwForm);
 	}
 	
 	private bool Button(string label)
@@ -389,7 +391,6 @@ public sealed class facebookSharescore : MonoBehaviour
 	}
 	
 	#endregion
-	   
 	private void OnMouseDown()
 	{
 		if (gameObject.name == "Invite")
@@ -399,34 +400,51 @@ public sealed class facebookSharescore : MonoBehaviour
 			//Debug.Log("invite button pressed");
 
 		}
-		else if(gameObject.name=="share_Button")
+		if(gameObject.name=="share_Button")
 
 		{	
+			if (Application.internetReachability!= NetworkReachability.NotReachable)
+			{
 
-			//take image and post it to the Facebook
-			LumosAnalytics.RecordEvent("Share Button");
+				 if (!FB.IsLoggedIn) {
+					FB.Login("email,publish_actions", LoginCallback);   
+				}
+				
+				else if(FB.IsLoggedIn)				
+				{
+					//StartCoroutine(TakeScreenshot());
+					onBragClicked();
+				}
+			
 
-			StartCoroutine(TakeScreenshot());
-
-			//Debug.Log("Share button pressed");
+	}
 		}
 
 	}
 
 	private void Start()
 	{
-		if (Application.internetReachability!= NetworkReachability.NotReachable)
-		{if (!FB.IsLoggedIn && counter==0)
-			{
+		if (isInit==false && Application.internetReachability!= NetworkReachability.NotReachable)
+		{
 			CallFBInit();
-			}
+
+			//Debug.Log ("intited");
+			//FB.Login("email,publish_actions", LoginCallback); 
 		}
 	}
 	private void Update()
-	{if (Application.internetReachability != NetworkReachability.NotReachable){
-		if (!FB.IsLoggedIn && counter==0) {
-			FB.Login("email,publish_actions", LoginCallback);                                                                                                                                                                
-			counter++;
-			}}
+	{
+		
+
 	}
+	private void onBragClicked()                                                                                                 
+	{                                                                                                                                                                                                                        
+		FB.Feed(                                                                                                                 
+		        linkCaption: "I just scored " + PlayerPrefs.GetInt("PlayerScore") + " friends! Can you beat it?",               
+		        picture: "https://www.dropbox.com/s/qhjlwo783hl3xeu/High_Score%20Screen_for%20game-02.png",                                                     
+		        linkName: "Checkout my Pixel Falls!",                                                                 
+		        link: "http://apps.facebook.com/" + FB.AppId + "/?challenge_brag=" + (FB.IsLoggedIn ? FB.UserId : "guest")       
+		        );                                                                                                               
+	}  
+
 }
