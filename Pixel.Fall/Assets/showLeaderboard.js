@@ -3,7 +3,7 @@
 import UnityEngine;
 #if UNITY_Android
 	import GooglePlayGames;
-#end if
+#endif
 
 
 function Start () {
