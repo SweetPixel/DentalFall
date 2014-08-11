@@ -13,7 +13,7 @@ var width : float;
 var hero: GameObject;
 var i :int = 0;
 var guiscore:TextMesh;
-
+var score : int;
 var count_tut : int =0;
 
 function Start () {
@@ -76,16 +76,24 @@ function Awake(){
 	}
 }
 function Update () {
-
+score = PlayerPrefs.GetInt("PlayerScore");
 }
 
 function Spawn(){
+var randomPick : int;
 	for (i=0; i<1000; i++){
-
-		var randomPick : int = Mathf.Abs(Random.Range(0,5));
+		if((score>=0)&&(score<=10))
+		Debug.Log(score);
+		 randomPick = 1;
+		 if((score>10)&&(score<=25))
+		 randomPick = Mathf.Abs(Random.Range(0,3));
+		 if((score>25)&&(score<=50))
+		 randomPick = Mathf.Abs(Random.Range(0,4));
+		 if(score>50)
+		 randomPick = Mathf.Abs(Random.Range(0,5));
 		var pos:Vector3 = new Vector3(Random.Range(-(width-0.2),width-0.2),7.0F,-3.021553F);
 		timer=0;
-;
+
 if(randomPick == 1){
 
 //var forward=transform.TransformDirection(Vector3.down);
@@ -95,7 +103,7 @@ if(randomPick == 1){
 else if(randomPick == 2){
 //var forward=transform.TransformDirection(Vector3.down);
 
-								Instantiate(enemy2,pos,Quaternion.identity);
+				Instantiate(enemy2,pos,Quaternion.identity);
 }
 else if(randomPick == 3){
 //var forward=transform.TransformDirection(Vector3.down);

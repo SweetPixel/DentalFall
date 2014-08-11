@@ -40,7 +40,8 @@ public class GoogleMobileAdsDemoScript : MonoBehaviour
 		// Load a banner ad.
 		bannerView.LoadAd(createAdRequest());
 	}
-	
+
+
 	private void RequestInterstitial()
 	{
 		#if UNITY_EDITOR
@@ -80,7 +81,10 @@ public class GoogleMobileAdsDemoScript : MonoBehaviour
 				.Build();
 		
 	}
-	
+	void OnDestroy(){
+
+		bannerView.Destroy();
+	}
 	private void ShowInterstitial()
 	{
 		if (interstitial.IsLoaded())

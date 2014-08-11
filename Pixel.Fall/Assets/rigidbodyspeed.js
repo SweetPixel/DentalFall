@@ -11,10 +11,15 @@ Debug.Log(Vector3.down);
 
 function Update () {
 score =  PlayerPrefs.GetInt("PlayerScore");
-if(score>0){
-speed = score / 1.6; 
-//speed = score / 2;
-Debug.Log(speed + " speed at  score = " + score);
+if((score>0)&&(score<=100)){
+ //main speed = score / 1.4; 
+speed = (score/10) / 0.5 + 1;
+Debug.Log(Vector3.down*speed);
+//Debug.Log(speed + " speed at  score = " + score);
+rigidbody.AddForce(Vector3.down * speed);
+}
+if(score>100){
+Debug.Log(Vector3.down*speed);
 rigidbody.AddForce(Vector3.down * speed);
 }
 /*if((score>0) && (score<30)){
