@@ -17,4 +17,4 @@ If any of the files is being tracked for commit then please remove it via the co
 
 ## Build
 1.4 (iOS)
- 
+3 (Android) 
