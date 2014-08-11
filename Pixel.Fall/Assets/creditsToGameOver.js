@@ -1,7 +1,6 @@
 ﻿#pragma strict
-
 function OnMouseDown()
 {
-Application.LoadLevel("gameOver");
+Application.LoadLevel("gameover");
 
 }
