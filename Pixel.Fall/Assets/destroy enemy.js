@@ -3,6 +3,7 @@
 var score:int=0;
 var guiscore: TextMesh;
 var coin : AudioClip;
+var start : AudioClip;
 function Start () {
 guiscore.active=true;
 	var height = Camera.main.camera.orthographicSize;

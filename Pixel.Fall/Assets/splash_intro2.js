@@ -1,5 +1,5 @@
 ﻿#pragma strict
-
+var PixelFallLogo : AudioClip;
 function Start () {
 var counter : int;
 counter = PlayerPrefs.GetInt("counter");
@@ -10,7 +10,5 @@ if(counter>0)
 Application.LoadLevel("readyScene");
 }
 
-function Update () {
 
-}
 

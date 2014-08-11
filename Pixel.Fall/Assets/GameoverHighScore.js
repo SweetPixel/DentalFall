@@ -6,7 +6,6 @@ var count : int = 0;
 var skin : GUISkin;
 function Start () {
 nowScore.fontSize=40;
-
 if(PlayerPrefs.GetInt("PlayerScore")<10 && PlayerPrefs.GetInt("HighScore")<10)
 {
 nowScore.text="    "+PlayerPrefs.GetInt("PlayerScore")+ " / "+ PlayerPrefs.GetInt("HighScore");
@@ -42,9 +41,8 @@ else if((PlayerPrefs.GetInt("PlayerScore")>99) && (PlayerPrefs.GetInt("PlayerSco
 nowScore.text=PlayerPrefs.GetInt("PlayerScore")+ " / "+ PlayerPrefs.GetInt("HighScore");
 HighScore.text = "(NEW)                                      (HIGH) " ;
 }
-
-audio.clip= explosion;
-audio.Play();
+//audio.clip= explosion;
+//audio.Play();
 
 }
 
