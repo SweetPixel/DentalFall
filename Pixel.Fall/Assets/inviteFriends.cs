@@ -6,32 +6,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
-public sealed class facebookSharescore : MonoBehaviour
+public sealed class inviteFriends : MonoBehaviour
 {
-	
+
 	#region FB.Init() example
-	public GUIText backText;
-	public GUIText scoreText;
-	public GameObject back;
-	public GameObject scoreShared;
+
 	private bool isInit = false;
-	public GUIText currentScore;
-	int x = 0;
-	
-	
-	void Update(){
-		if (Input.GetKeyDown(KeyCode.Escape)) {
-			Application.LoadLevel("gameover"); 
-		}
-		if(x>0){
-			back.renderer.enabled=true;
-			scoreShared.renderer.enabled=true;
-			backText.enabled=true;
-			scoreText.enabled=true;
-			x=0;
-		}
-	}
-	
+
+
+
 	private void CallFBInit()
 	{
 		FB.Init(OnInitComplete, OnHideUnity);
@@ -42,8 +25,8 @@ public sealed class facebookSharescore : MonoBehaviour
 		Debug.Log("FB.Init completed: Is user logged in? " + FB.IsLoggedIn);
 		FB.Login("email,publish_actions", LoginCallback);
 		isInit = true;
-	}
-	
+		}
+
 	
 	private void OnHideUnity(bool isGameShown)
 	{
@@ -58,8 +41,8 @@ public sealed class facebookSharescore : MonoBehaviour
 	{
 		FB.Login("email,publish_actions", LoginCallback);
 		
-		
-		
+
+
 	}
 	
 	void LoginCallback(FBResult result)
@@ -72,7 +55,8 @@ public sealed class facebookSharescore : MonoBehaviour
 		}
 		else
 		{
-			StartCoroutine(TakeScreenshot());
+			LumosAnalytics.RecordEvent("Invite Button");
+			CallAppRequestAsFriendSelector();
 
 			lastResponse = "Login was successful!";
 		}
@@ -144,8 +128,8 @@ public sealed class facebookSharescore : MonoBehaviour
 	public string DirectRequestTitle = "";
 	public string DirectRequestMessage = "Herp";
 	private string DirectRequestTo = "";
-	
-	
+
+	    
 	private void CallAppRequestAsDirectRequest()
 	{
 		if (DirectRequestTo == "")
@@ -333,25 +317,25 @@ public sealed class facebookSharescore : MonoBehaviour
 		}
 	}
 	
-	void Awake()
+	/*void Awake()
 	{
 		if(Application.internetReachability!= NetworkReachability.NotReachable && isInit==false)
 		{
 			FB.Init(OnInitComplete, OnHideUnity);
 		}
-		/*textStyle.alignment = TextAnchor.UpperLeft;
+		textStyle.alignment = TextAnchor.UpperLeft;
 		textStyle.wordWrap = true;
 		textStyle.padding = new RectOffset(10, 10, 10, 10);
 		textStyle.stretchHeight = true;
 		textStyle.stretchWidth = false;
 		
 		FeedProperties.Add("key1", new[] { "valueString1" });
-		FeedProperties.Add("key2", new[] { "valueString2", "http://www.facebook.com" });*/
-	}
+		FeedProperties.Add("key2", new[] { "valueString2", "http://www.facebook.com" });
+	}*/
 	
 	void OnGUI()
 	{
-		
+
 	}
 	
 	void Callback(FBResult result)
@@ -371,7 +355,7 @@ public sealed class facebookSharescore : MonoBehaviour
 	
 	private IEnumerator TakeScreenshot() 
 	{
-		
+
 		yield return new WaitForEndOfFrame();
 		
 		var width = Screen.width;
@@ -381,13 +365,13 @@ public sealed class facebookSharescore : MonoBehaviour
 		tex.ReadPixels(new Rect(0, 0, width, height), 0, 0);
 		tex.Apply();
 		byte[] screenshot = tex.EncodeToPNG();
+		
 		var wwwForm = new WWWForm();
 		wwwForm.AddBinaryData("image", screenshot, "InteractiveConsole.png");
 		wwwForm.AddField("message", "My New Score");
 		
 		FB.API("me/photos", Facebook.HttpMethod.POST, Callback, wwwForm);
-		x=1;
-		
+
 	}
 	
 	private bool Button(string label)
@@ -417,75 +401,32 @@ public sealed class facebookSharescore : MonoBehaviour
 	}
 	
 	#endregion
-	/*private void OnMouseDown()
+	private void OnMouseDown()
 	{
-		if (gameObject.name == "back")
+		if (gameObject.name == "Invite")
 		{
-			Debug.Log("button pressed");
-			Application.LoadLevel("gameOver");
-		}
-		if(gameObject.name=="share_Button")
-
-		{	
 			if (Application.internetReachability!= NetworkReachability.NotReachable)
 			{
-
-				 if (!FB.IsLoggedIn) {
-					FB.Login("email,publish_actions", LoginCallback);   
-				}
-				
-				else if(FB.IsLoggedIn)				
+				if(isInit==false && !FB.IsLoggedIn)
 				{
-					//StartCoroutine(TakeScreenshot());
-					onBragClicked();
+					FB.Init(OnInitComplete, OnHideUnity);
 				}
-			
-
-	}
+				else if(!FB.IsLoggedIn && isInit==true)
+				{
+					FB.Login("email,publish_actions", LoginCallback); 
+				}
+				else if(FB.IsLoggedIn)
+				{
+					LumosAnalytics.RecordEvent("Invite Button");
+					CallAppRequestAsFriendSelector();
+					
+					
+				}
+			}
 		}
-
-	}*/
-	
-	private void Start()
-	{
-		int score=PlayerPrefs.GetInt("PlayerScore");
-		
-		back.renderer.enabled=false;
-		scoreShared.renderer.enabled=false;
-		backText.enabled=false;
-		scoreText.enabled=false;
-		if(Application.internetReachability==NetworkReachability.NotReachable)
-		{
-
-			currentScore.text="X";
-			noInternet();
-		}
-		
-		else if(Application.internetReachability!= NetworkReachability.NotReachable)
-		{
-			currentScore.text=score.ToString();
-			if(isInit==false && !FB.IsLoggedIn)
-			{
-				FB.Init(OnInitComplete, OnHideUnity);
-			}
-			else if(!FB.IsLoggedIn && isInit==true)
-			{
-				FB.Login("email,publish_actions", LoginCallback); 
-			}
-			else if(FB.IsLoggedIn)
-			{
-				StartCoroutine(TakeScreenshot());
-				
-			}
-		}	
 	}
-	void noInternet()
-	{
-		back.renderer.enabled=true;
-		scoreShared.renderer.enabled=false;
-		backText.enabled=true;
-		scoreText.enabled=false;
-	}
+
+
 	/*void Start()
 	{
 	
@@ -507,5 +448,5 @@ public sealed class facebookSharescore : MonoBehaviour
 		        link: "http://apps.facebook.com/" + FB.AppId + "/?challenge_brag=" + (FB.IsLoggedIn ? FB.UserId : "guest")       
 		        );                                                                                                               
 	} */
-	
+
 }
