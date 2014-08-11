@@ -1,4 +1,9 @@
 ﻿#pragma strict
+import UnityEngine;
+//#if UNITY_Android
+//import GooglePlayGames;
+//#endif
+
 var HighScore : GUIText;
 var nowScore : GUIText;
 var explosion : AudioClip;
@@ -44,6 +49,14 @@ HighScore.text = "(NEW)                                      (HIGH) " ;
 //audio.clip= explosion;
 //audio.Play();
 
+
+			#if UNITY_Android
+				Social.ReportScore(PlayerPrefs.GetInt("HighScore"), "CgkIutDH9N0BEAIQAA",null);
+			#endif
+			
+			#if UNITY_IPHONE
+				Social.ReportScore(PlayerPrefs.GetInt("HighScore"), "pfsandbox", null);
+			#endif
 }
 
 function Update () {
@@ -62,7 +75,6 @@ if(GUI.Button(Rect(Screen.width/4,Screen.height*3/8,Screen.width/2,Screen.height
           {
 
          Application.Quit();
-
           }
           if(GUI.Button(Rect(Screen.width/4,Screen.height*4/8,Screen.width/2,Screen.height/8),"Keep Playing"))
           {

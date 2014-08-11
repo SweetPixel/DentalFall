@@ -6,7 +6,7 @@ public class gui_text : MonoBehaviour {
 	public float ratio = 10;
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
