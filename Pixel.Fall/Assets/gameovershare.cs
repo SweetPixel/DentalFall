@@ -14,17 +14,7 @@ public class gameovershare : MonoBehaviour
 
 		void OnMouseDown ()
 		{
-			#if UNITY_IPHONE
-				try {
-					IOSSocialManager.instance.FacebookPost("Facebook Post Working");
-				}
-				catch(UnityException e)
-				{
-					Debug.Log(e.Message);
-				}
-			#endif
-			
-			#if UNITY_ANDROID
+
 				if (Application.internetReachability != NetworkReachability.NotReachable) {
 					
 					Application.LoadLevel ("share_ScoreFB");
@@ -36,7 +26,6 @@ public class gameovershare : MonoBehaviour
 	//
 	//			});	
 	
-			#endif
 
 			
 		}
