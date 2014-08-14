@@ -59,7 +59,10 @@ nowScore.text=PlayerPrefs.GetInt("PlayerScore")+ " / "+ PlayerPrefs.GetInt("High
 //audio.Play();
 
 	#if UNITY_ANDROID
+		
+		// Report Score to Leaderboard
 		Social.ReportScore(PlayerPrefs.GetInt("HighScore"), "CgkIutDH9N0BEAIQAA",null);
+		
 		if(PlayerPrefs.GetInt("PlayerScore")>49)
 		Social.ReportProgress("CgkIutDH9N0BEAIQAw", 100.0f,null);
 		if(PlayerPrefs.GetInt("PlayerScore")>74)
@@ -75,7 +78,10 @@ nowScore.text=PlayerPrefs.GetInt("PlayerScore")+ " / "+ PlayerPrefs.GetInt("High
 	#endif
 
 	#if UNITY_IPHONE
+	
+		// Report Score to Leaderboard
 		Social.ReportScore(PlayerPrefs.GetInt("HighScore"), "pfall_leaderboard", null);
+		
 		if(PlayerPrefs.GetInt("PlayerScore")>49)
 		Social.ReportProgress("pfbronze", 100.0f,null);
 		if(PlayerPrefs.GetInt("PlayerScore")>74)

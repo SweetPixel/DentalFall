@@ -24,30 +24,30 @@ public class InviteFacbookFriends : MonoBehaviour {
 	void Start ()
 
 	{	
-		DialogManager.Instance.SetLabel(decidelabel,null,closelabel);
-
+		#if UNITY_ANDROID
+			DialogManager.Instance.SetLabel(decidelabel,null,closelabel);
+		#endif
 	}
 	void OnMouseDown(){
 
-		if(Application.internetReachability!= NetworkReachability.NotReachable)
-		{
+		if (Application.internetReachability != NetworkReachability.NotReachable) {
 			
-			if (FB.IsLoggedIn && !string.IsNullOrEmpty (FB.AccessToken)) {
-				OnLogin (new FBResult ("0"));
-			} else {
-				if (!isInit) {
-					FB.Init (OnInit, OnHideUnity);
-					Debug.Log ("fb not inited");
-				} else {
-					FB.Login ("public_profile,user_friends,email,publish_actions", OnLogin);
-				}
-			}
+						if (FB.IsLoggedIn && !string.IsNullOrEmpty (FB.AccessToken)) {
+								OnLogin (new FBResult ("0"));
+						} else {
+								if (!isInit) {
+										FB.Init (OnInit, OnHideUnity);
+										Debug.Log ("fb not inited");
+								} else {
+										FB.Login ("public_profile,user_friends,email,publish_actions", OnLogin);
+								}
+						}
 			
-		}
-		else
-			DialogManager.Instance.ShowSelectDialog("No Internet Connection",(bool result) =>{
+				} else
+						Debug.Log ("ABC");
+			//DialogManager.Instance.ShowSelectDialog("No Internet Connection",(bool result) =>{
 				
-			});
+//			});
 
 
 	}
