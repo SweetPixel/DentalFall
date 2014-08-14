@@ -9,6 +9,7 @@ public class gameovershare : MonoBehaviour {
 			DialogManager.Instance.SetLabel(decidelabel,null,closelabel);
 		#endif
 	}
+
 	void OnMouseDown () {
 		if (Application.internetReachability != NetworkReachability.NotReachable) {
 				

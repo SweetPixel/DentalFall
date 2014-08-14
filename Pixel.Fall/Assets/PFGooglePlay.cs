@@ -17,6 +17,8 @@ public class PFGooglePlay : MonoBehaviour {
 	}
 	void ProcessAuthentication (bool success) {
 		if (success) {
+
+			UnityEngine.SocialPlatforms.GameCenter.GameCenterPlatform.ShowDefaultAchievementCompletionBanner(true);
 			Debug.Log ("Authenticated, checking achievements");
 		}
 		else
