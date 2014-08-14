@@ -1,6 +1,6 @@
 ﻿private var displayLabel = false;
-var gameover: GUIText;
-
+var game: GUIText;
+var over: GUIText;
 var goscore: GUIText; 
 
 function Start() {
@@ -25,11 +25,14 @@ function Update(){
  if (displayLabel == true)
 {
 
- gameover.text="GAME\n OVER";
+ game.text="GAME";
+ over.text="OVER";
 }
  else
- gameover.text = " ";
- }
+ {
+ game.text = " ";
+ over.text=" ";
+ }}
  
 function FlashLabel() {
 

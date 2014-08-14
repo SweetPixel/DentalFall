@@ -69,7 +69,7 @@ GUI.skin = skin;
 
    GUI.Box(new Rect(0,0,Screen.width,Screen.height),"Exit");
    GUI.Label(new Rect(Screen.width*1/4,Screen.height*2/6,Screen.width*2/4,Screen.height*1/6), "Are you sure you want to exit the game?");
-if(GUI.Button(Rect(Screen.width/4,Screen.height*3/8,Screen.width/2,Screen.height/8),"Yes"))
+		 if(GUI.Button(Rect(Screen.width/4,Screen.height*3/8,Screen.width/2,Screen.height/8),"Yes"))
           {
 
          Application.Quit();
