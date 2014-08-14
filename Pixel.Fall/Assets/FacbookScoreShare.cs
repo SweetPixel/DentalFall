@@ -19,6 +19,7 @@ public sealed class FacbookScoreShare : MonoBehaviour
 		public string ApiQuery = "";
 		public int x = 0;
 
+
 		void Update ()
 		{
 				if (Input.GetKeyDown (KeyCode.Escape)) {
@@ -85,7 +86,7 @@ public sealed class FacbookScoreShare : MonoBehaviour
 
 		private IEnumerator TakeScreenshot ()
 		{
-		
+		String postmessage = "I just scored " + PlayerPrefs.GetInt("PlayerScore") + " in  #pixelfallgame";
 				yield return new WaitForEndOfFrame ();
 		
 				var width = Screen.width;
@@ -97,7 +98,7 @@ public sealed class FacbookScoreShare : MonoBehaviour
 				byte[] screenshot = tex.EncodeToPNG ();
 				var wwwForm = new WWWForm ();
 				wwwForm.AddBinaryData ("image", screenshot, "InteractiveConsole.png");
-				wwwForm.AddField ("message", "My New Score");
+		wwwForm.AddField ("message",postmessage);
 				FB.API ("me/photos", Facebook.HttpMethod.POST, Callback, wwwForm);
 				x = 1;
 		}
