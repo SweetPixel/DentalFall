@@ -1,6 +1,5 @@
 ﻿#pragma strict
 
-var SPSLogoSound : AudioClip;
 function Start () {
 //wait();
 

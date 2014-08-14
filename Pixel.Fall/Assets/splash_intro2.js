@@ -1,5 +1,4 @@
 ﻿#pragma strict
-var PixelFallLogo : AudioClip;
 function Start () {
 var counter : int;
 counter = PlayerPrefs.GetInt("counter");

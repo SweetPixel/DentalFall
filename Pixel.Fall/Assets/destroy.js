@@ -1,7 +1,7 @@
 ﻿#pragma strict
 var explosion : AudioClip;
 function Start () {
-
+PlayerPrefs.SetInt("LastScene",1);
 }
 
 function Update () {
