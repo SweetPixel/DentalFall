@@ -75,7 +75,7 @@ nowScore.text=PlayerPrefs.GetInt("PlayerScore")+ " / "+ PlayerPrefs.GetInt("High
 	#endif
 
 	#if UNITY_IPHONE
-		Social.ReportScore(PlayerPrefs.GetInt("HighScore"), "pfsandbox", null);
+		Social.ReportScore(PlayerPrefs.GetInt("HighScore"), "pfall_leaderboard", null);
 		if(PlayerPrefs.GetInt("PlayerScore")>49)
 		Social.ReportProgress("pfbronze", 100.0f,null);
 		if(PlayerPrefs.GetInt("PlayerScore")>74)
