@@ -10,3 +10,11 @@ Please before commiting make sure you have the latest .gitignore and the files l
 If any of the files is being tracked for commit then please remove it via the command:
 
 `git rm --cached <filename>`
+
+
+## Version
+1.0
+
+## Build
+1.4 (iOS)
+3 (Android) 
