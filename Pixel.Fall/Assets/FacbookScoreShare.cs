@@ -38,13 +38,6 @@ public sealed class FacbookScoreShare : MonoBehaviour
 		IEnumerator UploadOnIoS()
 		{
 			yield return new WaitForEndOfFrame();
-			currentScore.alignment = TextAlignment.Center;
-			back.renderer.enabled = false;
-			scoreShared.renderer.enabled = false;
-			backText.enabled = false;
-			scoreText.enabled = false;
-			int score= PlayerPrefs.GetInt("PlayerScore");
-			currentScore.text=score.ToString();
 			
 			try {
 				
@@ -55,7 +48,9 @@ public sealed class FacbookScoreShare : MonoBehaviour
 				// Read screen contents into the texture
 				tex.ReadPixels( new Rect(0, 0, width, height), 0, 0 );
 				tex.Apply();
-				IOSSocialManager.instance.FacebookPost("I just scored " + score.ToString() + " in  #pixelfallgame", tex);
+				
+				IOSSocialManager.instance.FacebookPost("I just scored " +
+			                                       PlayerPrefs.GetInt("PlayerScore").ToString() + " in  #pixelfallgame", tex);
 			}
 			catch(UnityException e)
 			{
@@ -67,6 +62,13 @@ public sealed class FacbookScoreShare : MonoBehaviour
 	{	
 		
 		#if UNITY_IPHONE
+			currentScore.alignment = TextAlignment.Center;
+			back.renderer.enabled = false;
+			scoreShared.renderer.enabled = false;
+			backText.enabled = false;
+			scoreText.enabled = false;
+			int score= PlayerPrefs.GetInt("PlayerScore");
+			currentScore.text=score.ToString();
 			StartCoroutine (UploadOnIoS());
 		#endif
 
