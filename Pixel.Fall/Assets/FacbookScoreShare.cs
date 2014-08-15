@@ -35,48 +35,56 @@ public sealed class FacbookScoreShare : MonoBehaviour
 				}
 		}
 
-		void Start ()
-		{	
+		IEnumerator UploadOnIoS()
+		{
+			yield return new WaitForEndOfFrame();
+			currentScore.alignment = TextAlignment.Center;
+			back.renderer.enabled = false;
+			scoreShared.renderer.enabled = false;
+			backText.enabled = false;
+			scoreText.enabled = false;
+			int score= PlayerPrefs.GetInt("PlayerScore");
+			currentScore.text=score.ToString();
+			
+			try {
+				
+				// Create a texture the size of the screen, RGB24 format
+				int width = Screen.width;
+				int height = Screen.height;
+				Texture2D tex = new Texture2D( width, height, TextureFormat.RGB24, false );
+				// Read screen contents into the texture
+				tex.ReadPixels( new Rect(0, 0, width, height), 0, 0 );
+				tex.Apply();
+				IOSSocialManager.instance.FacebookPost("I just scored " + score.ToString() + " in  #pixelfallgame", tex);
+			}
+			catch(UnityException e)
+			{
+				Debug.Log(e.Message);
+			}
+	}
+	
+	void Start ()
+	{	
+		
+		#if UNITY_IPHONE
+			StartCoroutine (UploadOnIoS());
+		#endif
 
-				currentScore.alignment = TextAlignment.Center;
-				back.renderer.enabled = false;
-				scoreShared.renderer.enabled = false;
-				backText.enabled = false;
-				scoreText.enabled = false;
-				int score= PlayerPrefs.GetInt("PlayerScore");
-				currentScore.text=score.ToString();
-				#if UNITY_IPHONE
-					try {
-						// Create a texture the size of the screen, RGB24 format
-						int width = Screen.width;
-						int height = Screen.height;
-						Texture2D tex = new Texture2D( width, height, TextureFormat.RGB24, false );
-						// Read screen contents into the texture
-						tex.ReadPixels( new Rect(0, 0, width, height), 0, 0 );
-						tex.Apply();
-						IOSSocialManager.instance.FacebookPost("I just scored " + score.ToString() + " in  #pixelfallgame", tex);
-					}
-					catch(UnityException e)
-					{
-						Debug.Log(e.Message);
-					}
-				#endif
-
-				#if UNITY_ANDROID
-					if (FB.IsLoggedIn && !string.IsNullOrEmpty (FB.AccessToken)) {
-							OnLogin (new FBResult ("0"));
+		#if UNITY_ANDROID
+			if (FB.IsLoggedIn && !string.IsNullOrEmpty (FB.AccessToken)) {
+					OnLogin (new FBResult ("0"));
+			} else {
+					if (!isInit) {
+							FB.Init (OnInit, OnHideUnity);
+							Debug.Log ("fb not inited");
 					} else {
-							if (!isInit) {
-									FB.Init (OnInit, OnHideUnity);
-									Debug.Log ("fb not inited");
-							} else {
-									FB.Login ("public_profile,user_friends,email,publish_actions", OnLogin);
-							}
+							FB.Login ("public_profile,user_friends,email,publish_actions", OnLogin);
 					}
-				#endif
+			}
+		#endif
 
 
-		}
+	}
 
 		private void OnLogin (FBResult result)
 		{
