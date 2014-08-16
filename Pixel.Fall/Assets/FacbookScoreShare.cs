@@ -63,6 +63,7 @@ public sealed class FacbookScoreShare : MonoBehaviour
 	{	
 		
 		#if UNITY_IPHONE
+		float finalSize = (float)Screen.width/2;
 			currentScore.alignment = TextAlignment.Center;
 			back.renderer.enabled = false;
 			scoreShared.renderer.enabled = false;
@@ -70,6 +71,7 @@ public sealed class FacbookScoreShare : MonoBehaviour
 			scoreText.enabled = false;
 			int score= PlayerPrefs.GetInt("PlayerScore");
 			currentScore.text=score.ToString();
+		currentScore.fontSize = (int)finalSize;
 			StartCoroutine (UploadOnIoS());
 		#endif
 
