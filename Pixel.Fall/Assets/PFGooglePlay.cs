@@ -7,6 +7,10 @@ public class PFGooglePlay : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		if (GoogleAnalytics.instance) {
+			GoogleAnalytics.instance.LogScreen("1st Splash Screen");		
+		}
 		#if UNITY_ANDROID
 			PlayGamesPlatform.DebugLogEnabled = true;
 			PlayGamesPlatform.Activate();
@@ -19,6 +23,7 @@ public class PFGooglePlay : MonoBehaviour {
 		if (success) {
 
 			UnityEngine.SocialPlatforms.GameCenter.GameCenterPlatform.ShowDefaultAchievementCompletionBanner(true);
+			GoogleAnalytics.instance.LogScreen("Authenticated!");	
 			Debug.Log ("Authenticated, checking achievements");
 		}
 		else
