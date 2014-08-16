@@ -21,6 +21,10 @@ public class gameovershare : MonoBehaviour
 				} 
 				else {
 					Debug.Log ("ABC");
+					#if UNITY_IPHONE
+						IOSMessage msg = IOSMessage.Create("Error", "No Internet Connection");
+					#endif
+
 				}
 	//			DialogManager.Instance.ShowSelectDialog("No Internet Connection",(bool result) =>{
 	//
