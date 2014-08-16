@@ -14,11 +14,18 @@ public class gui_text : MonoBehaviour {
 	
 	}
 	void OnGUI(){
-		float finalSize = (float)Screen.width/ratio;
+		//float finalSize = (float)Screen.width/ratio;
 		
-		guiText.fontSize = (int)finalSize;
+		//guiText.fontSize = (int)finalSize;
 		
-		guiText.pixelOffset = new Vector2( offset.x * Screen.width, offset.y * Screen.height);
+		//guiText.pixelOffset = new Vector2( offset.x * Screen.width, offset.y * Screen.height);
 		
+	}
+	void Awake(){
+		//float finalSize = (float)Screen.width/ratio;
+		
+		//guiText.fontSize = (int)finalSize;
+		
+		//guiText.pixelOffset = new Vector2( offset.x * Screen.width, offset.y * Screen.height);
 	}
 }
