@@ -19,7 +19,6 @@ public sealed class FacbookScoreShare : MonoBehaviour
 		public string ApiQuery = "";
 		public int x = 0;
 
-
 		void Update ()
 		{
 				if (Input.GetKeyDown (KeyCode.Escape)) {

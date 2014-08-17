@@ -1,24 +1,49 @@
 ﻿#pragma strict
 import UnityEngine;
 import GooglePlayGames;
-
-
+var scoreshare : GUIText;
+var invitefriends : GUIText;
+var newcube : Transform;	
+var highcube : Transform;
 var HighScore : GUIText;
 var nowScore : GUIText;
 var explosion : AudioClip;
 var count : int = 0;
 var skin : GUISkin;
-
-
+var width : float;
+var offset : Vector2;
+var ratio : int;
+var finalSize : int;
 function Start () {
- 
-		
+// ratio = 10;
+finalSize = Screen.width/ratio;
+
 if(PlayerPrefs.GetInt("LastScene") > 0){
 PlayerPrefs.SetInt("LastScene",0);
 audio.clip = explosion;
 audio.Play();
 audio.volume=1.0;
 }
+
+var height = Camera.main.camera.orthographicSize;
+	width = height * Screen.width / Screen.height;
+	var gameW = width /2;
+	Debug.Log(width);
+	Debug.Log(height);
+	if((width > 3.7)&&(width<3.8)){
+	newcube.transform.localScale = new Vector3(gameW, width/4, 0);
+	highcube.transform.localScale = new Vector3(gameW, width/4, 0);
+	scoreshare.fontSize = 25;
+	invitefriends.fontSize = 25;
+	scoreshare.transform.localPosition = new Vector3(0.075,4.91,0);
+	invitefriends.transform.localPosition = new Vector3(0.072,5.975,0);
+	}
+	else {
+	scoreshare.fontSize = finalSize;
+	invitefriends.fontSize = finalSize;
+	scoreshare.pixelOffset = new Vector2( offset.x * Screen.width, offset.y * Screen.height);
+	invitefriends.pixelOffset = new Vector2( offset.x * Screen.width, offset.y * Screen.height);
+	}
 nowScore.fontSize=40;
 if(PlayerPrefs.GetInt("PlayerScore")<10 && PlayerPrefs.GetInt("HighScore")<10)
 {
