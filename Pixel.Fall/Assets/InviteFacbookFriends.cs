@@ -31,7 +31,7 @@ public class InviteFacbookFriends : MonoBehaviour {
 	void OnMouseDown(){
 
 		if (Application.internetReachability != NetworkReachability.NotReachable) {
-			
+					#if UNITY_ANDROID
 						if (FB.IsLoggedIn && !string.IsNullOrEmpty (FB.AccessToken)) {
 								OnLogin (new FBResult ("0"));
 						} else {
@@ -42,6 +42,7 @@ public class InviteFacbookFriends : MonoBehaviour {
 										FB.Login ("public_profile,user_friends,email,publish_actions", OnLogin);
 								}
 						}
+					#endif
 					#if UNITY_IPHONE
 						IOSSocialManager.instance.FacebookPost("I am playing Pixel.Fall. How many pixels can you dodge? http://pixelfallgame.com");
 					#endif
