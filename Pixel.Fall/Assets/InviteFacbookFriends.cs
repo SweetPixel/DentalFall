@@ -42,6 +42,10 @@ public class InviteFacbookFriends : MonoBehaviour {
 										FB.Login ("public_profile,user_friends,email,publish_actions", OnLogin);
 								}
 						}
+					#if UNITY_IPHONE
+						IOSSocialManager.instance.FacebookPost("I am playing Pixel.Fall. How many pixels can you doge?" +
+			                                       + "http://pixelfallgame.com");
+					#endif
 			
 				} else
 						Debug.Log ("ABC");
