@@ -60,7 +60,9 @@ public sealed class FacbookScoreShare : MonoBehaviour
 	
 	void Start ()
 	{	
-		
+		if (GoogleAnalytics.instance) {
+			GoogleAnalytics.instance.LogScreen("Score sharing");		
+		}
 		#if UNITY_IPHONE
 		float finalSize = (float)Screen.width/2;
 			currentScore.alignment = TextAlignment.Center;
