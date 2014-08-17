@@ -30,7 +30,7 @@ var height = Camera.main.camera.orthographicSize;
 	var gameW = width /2;
 	Debug.Log(width);
 	Debug.Log(height);
-	if((width > 3.7)&&(width<3.8)){
+	if((width > 3.7)){
 	newcube.transform.localScale = new Vector3(gameW, width/4, 0);
 	highcube.transform.localScale = new Vector3(gameW, width/4, 0);
 	scoreshare.fontSize = 25;
