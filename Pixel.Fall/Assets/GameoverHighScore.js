@@ -31,14 +31,16 @@ var height = Camera.main.camera.orthographicSize;
 	var gameW = width /2;
 	Debug.Log(width);
 	Debug.Log(height);
-	if(width<3.7)
+	if((iPhone.generation == iPhoneGeneration.iPad3Gen) || (iPhone.generation == iPhoneGeneration.iPad4Gen))
+	//if(width<3.7)
 	{
+	Debug.Log("ipad2");
 	scoreshare.fontSize = finalSize;
 	invitefriends.fontSize = finalSize;
 	scoreshare.pixelOffset = new Vector2( offset.x * Screen.width, offset.y * Screen.height);
 	invitefriends.pixelOffset = new Vector2( offset.x * Screen.width, offset.y * Screen.height);
 	}
-	else if(width > 3.7)
+	else //if(width > 3.7)
 	{
 	newcube.transform.localScale = new Vector3(gameW, width/4, 0);
 	highcube.transform.localScale = new Vector3(gameW, width/4, 0);
