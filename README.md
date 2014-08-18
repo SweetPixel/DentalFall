@@ -16,5 +16,5 @@ If any of the files is being tracked for commit then please remove it via the co
 1.0
 
 ## Build
-1.4 (iOS)
-3 (Android) 
+1.7 (iOS)
+7 (Android) 
