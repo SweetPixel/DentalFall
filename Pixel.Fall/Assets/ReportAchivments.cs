@@ -20,7 +20,7 @@ public class ReportAchivments : MonoBehaviour {
 			Social.ReportProgress("CgkIutDH9N0BEAIQBQ", 100.0f,null);
 		if(PlayerPrefs.GetInt("PlayerScore")>149)
 			Social.ReportProgress("CgkIutDH9N0BEAIQBg", 100.0f,null);
-		if(PlayerPrefs.GetInt("PlayerScore")>199)
+		if(PlayerPrefs.GetInt("PlayerScore")>999)
 			Social.ReportProgress("CgkIutDH9N0BEAIQCA", 100.0f,null);
 		if(PlayerPrefs.GetInt("Deaths")>99)
 			Social.ReportProgress("CgkIutDH9N0BEAIQAg", 100.0f,null);
@@ -35,7 +35,7 @@ public class ReportAchivments : MonoBehaviour {
 			Social.ReportProgress("pfgold", 100.0f,null);
 		if(PlayerPrefs.GetInt("PlayerScore")>149)
 			Social.ReportProgress("pfplatinum", 100.0f,null);
-		if(PlayerPrefs.GetInt("PlayerScore")>199)
+		if(PlayerPrefs.GetInt("PlayerScore")>999)
 			Social.ReportProgress("pfinfinity", 100.0f,null);
 		if(PlayerPrefs.GetInt("Deaths")>99)
 			Social.ReportProgress("pfdeaths", 100.0f,null);
