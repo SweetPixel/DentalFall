@@ -32,14 +32,14 @@ var height = Camera.main.camera.orthographicSize;
 	Debug.Log(width);
 	Debug.Log(height);
 	
-	//if(width<3.7)
-	//{
+	if(width<3.7)
+	{
 	//Debug.Log("ipad1");
 	scoreshare.fontSize = finalSize;
 	invitefriends.fontSize = finalSize;
 	scoreshare.pixelOffset = new Vector2( offset.x * Screen.width, offset.y * Screen.height);
 	invitefriends.pixelOffset = new Vector2( offset.x * Screen.width, offset.y * Screen.height);
-	//}
+	}
 	#if UNITY_IPHONE
 	if((iPhone.generation == iPhoneGeneration.iPad3Gen) || (iPhone.generation == iPhoneGeneration.iPad4Gen)|| (iPhone.generation == iPhoneGeneration.iPad2Gen ))//if(width > 3.7)
 	{
