@@ -15,22 +15,20 @@ public class gameovershare : MonoBehaviour
 		void OnMouseDown ()
 		{
 
-				if (Application.internetReachability != NetworkReachability.NotReachable) {
+				if (Application.internetReachability != NetworkReachability.NotReachable) 
+					{
+						Application.LoadLevel ("share_ScoreFB");
+					} 
+				else 
+					{
+						#if UNITY_IPHONE
+							IOSMessage msg = IOSMessage.Create("Error", "No Internet Connection");
+						#endif
+						#if UNITY_ANDROID
+							DialogManager.Instance.ShowSelectDialog("No Internet Connection",(bool result) =>{});	
+						#endif
+
+					}
 					
-					Application.LoadLevel ("share_ScoreFB");
-				} 
-				else {
-					Debug.Log ("ABC");
-					#if UNITY_IPHONE
-						IOSMessage msg = IOSMessage.Create("Error", "No Internet Connection");
-					#endif
-
-				}
-	//			DialogManager.Instance.ShowSelectDialog("No Internet Connection",(bool result) =>{
-	//
-	//			});	
-	
-
-			
 		}
 }

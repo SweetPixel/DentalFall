@@ -47,11 +47,20 @@ public class InviteFacbookFriends : MonoBehaviour {
 						IOSSocialManager.instance.FacebookPost("I am playing Pixel.Fall. How many pixels can you dodge? http://pixelfallgame.com");
 					#endif
 			
-				} else
-						Debug.Log ("ABC");
-			//DialogManager.Instance.ShowSelectDialog("No Internet Connection",(bool result) =>{
-				
-//			});
+				} else 
+		{
+
+			#if UNITY_IPHONE
+			IOSMessage msg = IOSMessage.Create("Error", "No Internet Connection");
+			#endif
+			#if UNITY_ANDROID
+			DialogManager.Instance.ShowSelectDialog("No Internet Connection",(bool result) =>{});	
+			#endif
+
+
+		}
+						
+
 
 
 	}
