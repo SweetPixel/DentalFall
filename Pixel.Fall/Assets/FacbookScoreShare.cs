@@ -77,6 +77,16 @@ public sealed class FacbookScoreShare : MonoBehaviour
 		#endif
 
 		#if UNITY_ANDROID
+		float finalSize = (float)Screen.width/2;
+		currentScore.alignment = TextAlignment.Center;
+		back.renderer.enabled = false;
+		scoreShared.renderer.enabled = false;
+		backText.enabled = false;
+		scoreText.enabled = false;
+		int score= PlayerPrefs.GetInt("PlayerScore");
+		currentScore.text=score.ToString();
+		currentScore.fontSize = (int)finalSize;
+
 			if (FB.IsLoggedIn && !string.IsNullOrEmpty (FB.AccessToken)) {
 					OnLogin (new FBResult ("0"));
 			} else {
