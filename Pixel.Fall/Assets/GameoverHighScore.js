@@ -1,8 +1,8 @@
 ﻿#pragma strict
 import GooglePlayGames;
 
-var scoreshare : GUIText;
-var invitefriends : GUIText;
+//var scoreshare : GUIText;
+//var invitefriends : GUIText;
 var newcube : Transform;	
 var highcube : Transform;
 var HighScore : GUIText;
@@ -32,24 +32,24 @@ var height = Camera.main.camera.orthographicSize;
 	Debug.Log(width);
 	Debug.Log(height);
 	
-	if(width<3.7)
+	/*if(width<3.7)
 	{
 	//Debug.Log("ipad1");
 	scoreshare.fontSize = finalSize;
 	invitefriends.fontSize = finalSize;
 	scoreshare.pixelOffset = new Vector2( offset.x * Screen.width, offset.y * Screen.height);
 	invitefriends.pixelOffset = new Vector2( offset.x * Screen.width, offset.y * Screen.height);
-	}
+	}*/
 	#if UNITY_IPHONE
 	if((iPhone.generation == iPhoneGeneration.iPad3Gen) || (iPhone.generation == iPhoneGeneration.iPad4Gen)|| (iPhone.generation == iPhoneGeneration.iPad2Gen ))//if(width > 3.7)
 	{
 	//Debug.Log("ipad2");
 	newcube.transform.localScale = new Vector3(gameW, width/4, 0);
 	highcube.transform.localScale = new Vector3(gameW, width/4, 0);
-	scoreshare.fontSize = 25;
+	/*scoreshare.fontSize = 25;
 	invitefriends.fontSize = 25;
 	scoreshare.transform.localPosition = new Vector3(0.075,4.91,0);
-	invitefriends.transform.localPosition = new Vector3(0.072,5.975,0);
+	invitefriends.transform.localPosition = new Vector3(0.072,5.975,0);*/
 	}
 	#endif
 nowScore.fontSize=40;
