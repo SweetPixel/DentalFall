@@ -24,12 +24,9 @@ public class InviteFacbookFriends : MonoBehaviour {
 	void Start ()
 
 	{	
-		#if UNITY_ANDROID
-			DialogManager.Instance.SetLabel(decidelabel,null,closelabel);
-		#endif
 	}
 	void OnMouseDown(){
-
+		DialogManager.Instance.SetLabel(decidelabel,null,closelabel);
 		if (Application.internetReachability != NetworkReachability.NotReachable) {
 					#if UNITY_ANDROID
 						if (FB.IsLoggedIn && !string.IsNullOrEmpty (FB.AccessToken)) {

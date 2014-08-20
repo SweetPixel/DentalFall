@@ -25,13 +25,21 @@ public sealed class FacbookScoreShare : MonoBehaviour
 
 						Application.LoadLevel ("gameover"); 
 				}
-				if (x > 0) {
+				if (x == 1) {
 						back.renderer.enabled = true;
-						scoreShared.renderer.enabled = true;
 						backText.enabled = true;
+						scoreShared.renderer.enabled = true;
 						scoreText.enabled = true;
 						x = 0;
 				}
+		if(x==2){
+			back.renderer.enabled = true;
+			backText.enabled = true;
+			scoreShared.renderer.enabled = true;
+			scoreText.enabled = true;
+			scoreShared.guiText.text = "ERROR";
+
+		}
 		}
 
 		IEnumerator UploadOnIoS()
@@ -111,6 +119,7 @@ public sealed class FacbookScoreShare : MonoBehaviour
 				if (result.Error != null) {   
 						Debug.LogError (result.Error);
 						return;
+						x=2;
 				}           
 				StartCoroutine (TakeScreenshot ());
 		}
@@ -143,7 +152,7 @@ public sealed class FacbookScoreShare : MonoBehaviour
 				wwwForm.AddBinaryData ("image", screenshot, "InteractiveConsole.png");
 		wwwForm.AddField ("message",postmessage);
 				FB.API ("me/photos", Facebook.HttpMethod.POST, Callback, wwwForm);
-				x = 1;
+				
 		}
 
 		void Callback (FBResult result)
@@ -153,14 +162,19 @@ public sealed class FacbookScoreShare : MonoBehaviour
 				if (!String.IsNullOrEmpty (result.Error)) {
 						lastResponse = "Error Response:\n" + result.Error;
 						Debug.Log (lastResponse);
+						x=2;
 				} else if (!ApiQuery.Contains ("/picture")) {
 						lastResponse = "Success Response:\n" + result.Text;
 						Debug.Log (lastResponse);
-				} else {
+			x = 1;
+			Debug.Log (x);
+		} else {
 						lastResponseTexture = result.Texture;
 						lastResponse = "Success Response:\n";
 						Debug.Log (lastResponse);
-				}
+						x = 1;
+			Debug.Log (x);
+		}
 		}
 
 }

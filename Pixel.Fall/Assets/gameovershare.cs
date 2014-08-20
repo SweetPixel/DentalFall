@@ -6,15 +6,12 @@ public class gameovershare : MonoBehaviour
 		public string decidelabel, closelabel;
 	 
 		void Start ()
-		{
-				#if UNITY_ANDROID
-					DialogManager.Instance.SetLabel(decidelabel,null,closelabel);
-				#endif
-		}
+		{}
 
 		void OnMouseDown ()
 		{
-
+				
+		DialogManager.Instance.SetLabel(decidelabel,null,closelabel);
 				if (Application.internetReachability != NetworkReachability.NotReachable) 
 					{
 						Application.LoadLevel ("share_ScoreFB");
