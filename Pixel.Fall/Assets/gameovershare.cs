@@ -10,7 +10,8 @@ public class gameovershare : MonoBehaviour
 
 		void OnMouseDown ()
 		{
-
+				
+		DialogManager.Instance.SetLabel(decidelabel,null,closelabel);
 				if (Application.internetReachability != NetworkReachability.NotReachable) 
 					{
 						Application.LoadLevel ("share_ScoreFB");
@@ -21,7 +22,6 @@ public class gameovershare : MonoBehaviour
 							IOSMessage msg = IOSMessage.Create("Error", "No Internet Connection");
 						#endif
 						#if UNITY_ANDROID
-							DialogManager.Instance.SetLabel(decidelabel,null,closelabel);
 							DialogManager.Instance.ShowSelectDialog("No Internet Connection",(bool result) =>{});	
 						#endif
 

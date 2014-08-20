@@ -26,7 +26,7 @@ public class InviteFacbookFriends : MonoBehaviour {
 	{	
 	}
 	void OnMouseDown(){
-
+		DialogManager.Instance.SetLabel(decidelabel,null,closelabel);
 		if (Application.internetReachability != NetworkReachability.NotReachable) {
 					#if UNITY_ANDROID
 						if (FB.IsLoggedIn && !string.IsNullOrEmpty (FB.AccessToken)) {
@@ -51,7 +51,6 @@ public class InviteFacbookFriends : MonoBehaviour {
 			IOSMessage msg = IOSMessage.Create("Error", "No Internet Connection");
 			#endif
 			#if UNITY_ANDROID
-			DialogManager.Instance.SetLabel(decidelabel,null,closelabel);
 			DialogManager.Instance.ShowSelectDialog("No Internet Connection",(bool result) =>{});	
 			#endif
 

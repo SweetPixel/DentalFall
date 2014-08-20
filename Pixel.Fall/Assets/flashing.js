@@ -4,6 +4,8 @@ var over: GUIText;
 var goscore: GUIText; 
 
 function Start() {
+game.guiText.fontStyle = FontStyle.Bold;
+over.guiText.fontStyle = FontStyle.Bold;
 FlashLabel();
 //FlashCrash();
 
