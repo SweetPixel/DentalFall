@@ -1,11 +1,7 @@
 ﻿private var displayLabel = false;
-var game: GUIText;
-var over: GUIText;
-var goscore: GUIText; 
+var gameover: GameObject;
 
 function Start() {
-game.guiText.fontStyle = FontStyle.Bold;
-over.guiText.fontStyle = FontStyle.Bold;
 FlashLabel();
 //FlashCrash();
 
@@ -13,27 +9,15 @@ FlashLabel();
 
 }
 
-/* function FlashCrash(){
- while(countdown>=1){
-gamecrashtext.text = "CRASHING IN  " + countdown; 
- countdown--;
- yield WaitForSeconds(1);
- }
- Application.Quit();
- 
- 
- }*/
 function Update(){
  if (displayLabel == true)
 {
 
- game.text="GAME";
- over.text="OVER";
+gameover.renderer.enabled=true;
 }
  else
  {
- game.text = " ";
- over.text=" ";
+ gameover.renderer.enabled=false;
  }}
  
 function FlashLabel() {
