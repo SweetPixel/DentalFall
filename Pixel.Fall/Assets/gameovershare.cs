@@ -6,11 +6,7 @@ public class gameovershare : MonoBehaviour
 		public string decidelabel, closelabel;
 	 
 		void Start ()
-		{
-				#if UNITY_ANDROID
-					DialogManager.Instance.SetLabel(decidelabel,null,closelabel);
-				#endif
-		}
+		{}
 
 		void OnMouseDown ()
 		{
@@ -25,6 +21,7 @@ public class gameovershare : MonoBehaviour
 							IOSMessage msg = IOSMessage.Create("Error", "No Internet Connection");
 						#endif
 						#if UNITY_ANDROID
+							DialogManager.Instance.SetLabel(decidelabel,null,closelabel);
 							DialogManager.Instance.ShowSelectDialog("No Internet Connection",(bool result) =>{});	
 						#endif
 
