@@ -58,7 +58,7 @@ public sealed class FacbookScoreShare : MonoBehaviour
 				
 				IOSSocialManager.instance.FacebookPost("I just scored " +
 			                                       PlayerPrefs.GetInt("PlayerScore").ToString() + " in  #pixelfallgame", tex);
-			x=1;
+				x=1;
 			}
 			catch(UnityException e)
 			{
@@ -72,7 +72,7 @@ public sealed class FacbookScoreShare : MonoBehaviour
 			GoogleAnalytics.instance.LogScreen("Score sharing");		
 		}
 		#if UNITY_IPHONE
-		float finalSize = (float)Screen.width/2;
+			float finalSize = (float)Screen.width/2;
 			currentScore.alignment = TextAlignment.Center;
 			back.renderer.enabled = false;
 			scoreShared.renderer.enabled = false;
@@ -80,31 +80,31 @@ public sealed class FacbookScoreShare : MonoBehaviour
 			scoreText.enabled = false;
 			int score= PlayerPrefs.GetInt("PlayerScore");
 			currentScore.text=score.ToString();
-		currentScore.fontSize = (int)finalSize;
+			currentScore.fontSize = (int)finalSize;
 			StartCoroutine (UploadOnIoS());
 		#endif
 
 		#if UNITY_ANDROID
-		float finalSize = (float)Screen.width/2;
-		currentScore.alignment = TextAlignment.Center;
-		back.renderer.enabled = false;
-		scoreShared.renderer.enabled = false;
-		backText.enabled = false;
-		scoreText.enabled = false;
-		int score= PlayerPrefs.GetInt("PlayerScore");
-		currentScore.text=score.ToString();
-		currentScore.fontSize = (int)finalSize;
+			float finalSize = (float)Screen.width/2;
+			currentScore.alignment = TextAlignment.Center;
+			back.renderer.enabled = false;
+			scoreShared.renderer.enabled = false;
+			backText.enabled = false;
+			scoreText.enabled = false;
+			int score= PlayerPrefs.GetInt("PlayerScore");
+			currentScore.text=score.ToString();
+			currentScore.fontSize = (int)finalSize;
 
-			if (FB.IsLoggedIn && !string.IsNullOrEmpty (FB.AccessToken)) {
-					OnLogin (new FBResult ("0"));
-			} else {
-					if (!isInit) {
-							FB.Init (OnInit, OnHideUnity);
-							Debug.Log ("fb not inited");
-					} else {
-							FB.Login ("public_profile,user_friends,email,publish_actions", OnLogin);
-					}
-			}
+				if (FB.IsLoggedIn && !string.IsNullOrEmpty (FB.AccessToken)) {
+						OnLogin (new FBResult ("0"));
+				} else {
+						if (!isInit) {
+								FB.Init (OnInit, OnHideUnity);
+								Debug.Log ("fb not inited");
+						} else {
+								FB.Login ("public_profile,user_friends,email,publish_actions", OnLogin);
+						}
+				}
 		#endif
 
 
