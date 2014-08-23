@@ -39,7 +39,13 @@ public sealed class FacbookScoreShare : MonoBehaviour
 			scoreText.enabled = true;
 			scoreShared.guiText.text = "ERROR";
 
+		}if(x==3)
+		{
+			back.renderer.enabled = true;
+			backText.enabled = true;
+			x = 0;
 		}
+
 		}
 
 		IEnumerator UploadOnIoS()
@@ -58,7 +64,7 @@ public sealed class FacbookScoreShare : MonoBehaviour
 				
 				IOSSocialManager.instance.FacebookPost("I just scored " +
 			                                       PlayerPrefs.GetInt("PlayerScore").ToString() + " in  #pixelfallgame", tex);
-				x=1;
+				x=3;
 			}
 			catch(UnityException e)
 			{
