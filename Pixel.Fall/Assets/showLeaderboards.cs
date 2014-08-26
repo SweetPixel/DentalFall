@@ -15,7 +15,7 @@ public class showLeaderboards : MonoBehaviour {
 		DialogManager.Instance.SetLabel(decidelabel,null,closelabel);
 		if (Application.internetReachability != NetworkReachability.NotReachable) 
 		{
-			Social.ShowAchievementsUI();
+			Social.ShowLeaderboardUI();
 		} 
 		else 
 		{
