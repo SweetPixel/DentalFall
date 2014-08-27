@@ -156,7 +156,7 @@ public sealed class FacbookScoreShare : MonoBehaviour
 				byte[] screenshot = tex.EncodeToPNG ();
 				var wwwForm = new WWWForm ();
 				wwwForm.AddBinaryData ("image", screenshot, "InteractiveConsole.png");
-		wwwForm.AddField ("message",postmessage);
+		wwwForm.AddField ("message","");
 				FB.API ("me/photos", Facebook.HttpMethod.POST, Callback, wwwForm);
 				
 		}
