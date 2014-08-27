@@ -17,6 +17,9 @@ var finalSize : int;
 
 function Start () 
 {
+		if (GoogleAnalytics.instance) {
+			GoogleAnalytics.instance.LogScreen("Game Over Scene");		
+		}
 finalSize = Screen.width/ratio;
 if(PlayerPrefs.GetInt("LastScene") > 0)
 {
