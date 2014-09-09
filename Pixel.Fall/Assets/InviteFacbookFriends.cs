@@ -43,7 +43,7 @@ public class InviteFacbookFriends : MonoBehaviour {
 						}
 					#endif
 					#if UNITY_IPHONE
-						IOSSocialManager.instance.FacebookPost("I am playing PixelFall. How many pixels can you dodge? http://pixelfallgame.com");
+			IOSSocialManager.instance.FacebookPost("I am playing PixelFall. How many pixels can you dodge? http://pixelfallgame.com/");
 					#endif
 			
 				} else 

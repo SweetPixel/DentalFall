@@ -63,7 +63,7 @@ public sealed class FacbookScoreShare : MonoBehaviour
 				tex.Apply();
 				
 				IOSSocialManager.instance.FacebookPost("I just scored " +
-			                                       PlayerPrefs.GetInt("PlayerScore").ToString() + " in  #pixelfallgame", tex);
+			                                       PlayerPrefs.GetInt("PlayerScore").ToString() + " in  http://pixelfallgame.com", tex);
 				x=3;
 			}
 			catch(UnityException e)
