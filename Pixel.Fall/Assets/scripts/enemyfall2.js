@@ -83,17 +83,16 @@ score = PlayerPrefs.GetInt("PlayerScore");
 function Spawn(){
 var randomPick : int;
 	for (i=0; i<1000; i++){
-		if((score>=0)&&(score<=10))
-		Debug.Log(score);
+		 if((score>=0)&&(score<=10))
 		 randomPick = 1;
 		 if((score>10)&&(score<=25))
-		 randomPick = Mathf.Abs(Random.Range(0,3));
+		 randomPick = Mathf.Abs(Random.Range(1,2));
 		 if((score>25)&&(score<=50))
-		 randomPick = Mathf.Abs(Random.Range(0,4));
+		 randomPick = Mathf.Abs(Random.Range(1,3));
 		 if((score>50)&&(score<=60))
-		 randomPick = Mathf.Abs(Random.Range(0,5));
+		 randomPick = Mathf.Abs(Random.Range(1,4));
 		 if(score>60)
-		 randomPick = Mathf.Abs(Random.Range(0,6));
+		 randomPick = Mathf.Abs(Random.Range(1,5));
 		var pos:Vector3 = new Vector3(Random.Range(-(width-0.2),width-0.2),7.0F,-3.021553F);
 		timer=0;
 
