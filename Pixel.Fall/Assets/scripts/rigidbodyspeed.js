@@ -6,7 +6,7 @@ var addfactor :float = 1;
 var base : float = 18.2;//base is 18
 function Start () {
 rigidbody.AddForce(Vector3.down * 0.1);
-Debug.Log(Vector3.down);
+//Debug.Log(Vector3.down);
 }
 
 function Update () {
@@ -14,12 +14,12 @@ score =  PlayerPrefs.GetInt("PlayerScore");
 if((score>0)&&(score<=100)){
  //main speed = score / 1.4; 
 speed = (score/10) / 0.5 + 1;
-Debug.Log(Vector3.down*speed);
+//Debug.Log(Vector3.down*speed);
 //Debug.Log(speed + " speed at  score = " + score);
 rigidbody.AddForce(Vector3.down * speed);
 }
 if(score>100){
-Debug.Log(Vector3.down*speed);
+//Debug.Log(Vector3.down*speed);
 rigidbody.AddForce(Vector3.down * speed);
 }
 /*if((score>0) && (score<30)){
