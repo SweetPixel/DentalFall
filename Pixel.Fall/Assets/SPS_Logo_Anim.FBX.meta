@@ -1,0 +1,362 @@
+fileFormatVersion: 2
+guid: d517ca39ea1aafa45b5cd018506b5fb3
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Bars
+    100002: Birth 001
+    100004: Birth 002
+    100006: Birth 003
+    100008: Blue
+    100010: Box295
+    100012: Box300
+    100014: Box302
+    100016: Box303
+    100018: Box304
+    100020: Box305
+    100022: Box306
+    100024: Box307
+    100026: Box308
+    100028: Box310
+    100030: Box311
+    100032: Box312
+    100034: Box313
+    100036: Box314
+    100038: Box315
+    100040: Box316
+    100042: Camera001
+    100044: Collision Spawn 001
+    100046: Dark_Blue_003
+    100048: Dark_Blue_004
+    100050: Dark_Blue_01
+    100052: Dark_Blue_02
+    100054: Delete 001
+    100056: Delete 002
+    100058: Delete 003
+    100060: Delete 004
+    100062: Display 001
+    100064: Display 002
+    100066: Display 003
+    100068: Display 004
+    100070: Display 005
+    100072: Display 006
+    100074: Display 007
+    100076: Event 001
+    100078: Event 002
+    100080: Event 003
+    100082: Event 004
+    100084: Event 005
+    100086: Event 006
+    100088: Event 007
+    100090: Green
+    100092: Material Static 001
+    100094: Particle View 001
+    100096: PF Arrow001
+    100098: Pink
+    100100: Pixel
+    100102: Position Icon 001
+    100104: Position Icon 002
+    100106: Position Icon 003
+    100108: Position Object 001
+    100110: Rectangle001
+    100112: Render 001
+    100114: Render 002
+    100116: Render 003
+    100118: Rotation 001
+    100120: Rotation 002
+    100122: Rotation 003
+    100124: Shape 001
+    100126: Shape Instance 001
+    100128: Shape Instance 002
+    100130: Shape Instance 003
+    100132: Single
+    100134: Single001
+    100136: Single002
+    100138: Single003
+    100140: Single004
+    100142: Single005
+    100144: Single006
+    100146: Single007
+    100148: Single008
+    100150: Single009
+    100152: Single010
+    100154: Single011
+    100156: Spawn 001
+    100158: Speed 002
+    100160: Speed 003
+    100162: Speed 004
+    100164: Speed 005
+    100166: //RootNode
+    100168: Studios
+    100170: Sweet_Pixel
+    100172: Text001
+    100174: Yellow
+    100176: Yellow001
+    400000: Bars
+    400002: Birth 001
+    400004: Birth 002
+    400006: Birth 003
+    400008: Blue
+    400010: Box295
+    400012: Box300
+    400014: Box302
+    400016: Box303
+    400018: Box304
+    400020: Box305
+    400022: Box306
+    400024: Box307
+    400026: Box308
+    400028: Box310
+    400030: Box311
+    400032: Box312
+    400034: Box313
+    400036: Box314
+    400038: Box315
+    400040: Box316
+    400042: Camera001
+    400044: Collision Spawn 001
+    400046: Dark_Blue_003
+    400048: Dark_Blue_004
+    400050: Dark_Blue_01
+    400052: Dark_Blue_02
+    400054: Delete 001
+    400056: Delete 002
+    400058: Delete 003
+    400060: Delete 004
+    400062: Display 001
+    400064: Display 002
+    400066: Display 003
+    400068: Display 004
+    400070: Display 005
+    400072: Display 006
+    400074: Display 007
+    400076: Event 001
+    400078: Event 002
+    400080: Event 003
+    400082: Event 004
+    400084: Event 005
+    400086: Event 006
+    400088: Event 007
+    400090: Green
+    400092: Material Static 001
+    400094: Particle View 001
+    400096: PF Arrow001
+    400098: Pink
+    400100: Pixel
+    400102: Position Icon 001
+    400104: Position Icon 002
+    400106: Position Icon 003
+    400108: Position Object 001
+    400110: Rectangle001
+    400112: Render 001
+    400114: Render 002
+    400116: Render 003
+    400118: Rotation 001
+    400120: Rotation 002
+    400122: Rotation 003
+    400124: Shape 001
+    400126: Shape Instance 001
+    400128: Shape Instance 002
+    400130: Shape Instance 003
+    400132: Single
+    400134: Single001
+    400136: Single002
+    400138: Single003
+    400140: Single004
+    400142: Single005
+    400144: Single006
+    400146: Single007
+    400148: Single008
+    400150: Single009
+    400152: Single010
+    400154: Single011
+    400156: Spawn 001
+    400158: Speed 002
+    400160: Speed 003
+    400162: Speed 004
+    400164: Speed 005
+    400166: //RootNode
+    400168: Studios
+    400170: Sweet_Pixel
+    400172: Text001
+    400174: Yellow
+    400176: Yellow001
+    2300000: Bars
+    2300002: Blue
+    2300004: Box295
+    2300006: Box300
+    2300008: Box302
+    2300010: Box303
+    2300012: Box304
+    2300014: Box305
+    2300016: Box306
+    2300018: Box307
+    2300020: Box308
+    2300022: Box310
+    2300024: Box311
+    2300026: Box312
+    2300028: Box313
+    2300030: Box314
+    2300032: Box315
+    2300034: Box316
+    2300036: Dark_Blue_003
+    2300038: Dark_Blue_004
+    2300040: Dark_Blue_01
+    2300042: Dark_Blue_02
+    2300044: Green
+    2300046: Pink
+    2300048: Rectangle001
+    2300050: Single
+    2300052: Single001
+    2300054: Single002
+    2300056: Single003
+    2300058: Single004
+    2300060: Single005
+    2300062: Single006
+    2300064: Single007
+    2300066: Single008
+    2300068: Single009
+    2300070: Single010
+    2300072: Single011
+    2300074: Studios
+    2300076: Sweet_Pixel
+    2300078: Yellow
+    2300080: Yellow001
+    3300000: Bars
+    3300002: Blue
+    3300004: Box295
+    3300006: Box300
+    3300008: Box302
+    3300010: Box303
+    3300012: Box304
+    3300014: Box305
+    3300016: Box306
+    3300018: Box307
+    3300020: Box308
+    3300022: Box310
+    3300024: Box311
+    3300026: Box312
+    3300028: Box313
+    3300030: Box314
+    3300032: Box315
+    3300034: Box316
+    3300036: Dark_Blue_003
+    3300038: Dark_Blue_004
+    3300040: Dark_Blue_01
+    3300042: Dark_Blue_02
+    3300044: Green
+    3300046: Pink
+    3300048: Rectangle001
+    3300050: Single
+    3300052: Single001
+    3300054: Single002
+    3300056: Single003
+    3300058: Single004
+    3300060: Single005
+    3300062: Single006
+    3300064: Single007
+    3300066: Single008
+    3300068: Single009
+    3300070: Single010
+    3300072: Single011
+    3300074: Studios
+    3300076: Sweet_Pixel
+    3300078: Yellow
+    3300080: Yellow001
+    4300000: Rectangle001
+    4300002: Dark_Blue_01
+    4300004: Single
+    4300006: Box295
+    4300008: Box300
+    4300010: Box302
+    4300012: Box303
+    4300014: Box304
+    4300016: Box305
+    4300018: Box306
+    4300020: Box307
+    4300022: Sweet_Pixel
+    4300024: Studios
+    4300026: Bars
+    4300028: Blue
+    4300030: Green
+    4300032: Pink
+    4300034: Box308
+    4300036: Dark_Blue_02
+    4300038: Box310
+    4300040: Single001
+    4300042: Single002
+    4300044: Box311
+    4300046: Yellow
+    4300048: Single003
+    4300050: Single004
+    4300052: Single005
+    4300054: Single006
+    4300056: Single007
+    4300058: Box312
+    4300060: Box313
+    4300062: Box314
+    4300064: Dark_Blue_003
+    4300066: Box315
+    4300068: Single008
+    4300070: Single009
+    4300072: Box316
+    4300074: Yellow001
+    4300076: Single010
+    4300078: Single011
+    4300080: Dark_Blue_004
+    7400000: SPS Logo
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 

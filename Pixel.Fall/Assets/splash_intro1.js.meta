@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 001a93e0399fb3b4f8d4f43ab6501d8f
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - SPSLogoSound: {fileID: 8300000, guid: 017579e756ae2e946994a2a215a4d55d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
