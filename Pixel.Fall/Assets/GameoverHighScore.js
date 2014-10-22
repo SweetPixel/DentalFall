@@ -92,41 +92,57 @@ nowScore.text=PlayerPrefs.GetInt("PlayerScore")+ " / "+ PlayerPrefs.GetInt("High
 //audio.clip= explosion;
 //audio.Play();
 
+if("PlayerScore" >= 100)
+{
+hatrick_achievement++;
+PlayerPrefs.SetInt("hatrick_achievement",hatrick_achievement);
+if(PlayerPrefs.GetInt("hatrick_achievement")>=3)
+Debug.Log("warkahatrick");
+Debug.Log(hatrick_achievement);
+}
+else if(score<100)
+{
+hatrick_achievement=0;
+PlayerPrefs.SetInt("hatrick_achievement",hatrick_achievement);
+
+}
+
+
 	#if UNITY_ANDROID
 		
 		// Report Score to Leaderboard
-		Social.ReportScore(PlayerPrefs.GetInt("HighScore"), "CgkIutDH9N0BEAIQAA",null);
+		//Social.ReportScore(PlayerPrefs.GetInt("HighScore"), "CgkIutDH9N0BEAIQAA",null);
 		
-		if(PlayerPrefs.GetInt("PlayerScore")>49)
-		Social.ReportProgress("CgkIutDH9N0BEAIQAw", 100.0f,null);
-		if(PlayerPrefs.GetInt("PlayerScore")>74)
-		Social.ReportProgress("CgkIutDH9N0BEAIQBA", 100.0f,null);
-		if(PlayerPrefs.GetInt("PlayerScore")>99)
-		Social.ReportProgress("CgkIutDH9N0BEAIQBQ", 100.0f,null);
-		if(PlayerPrefs.GetInt("PlayerScore")>149)
-		Social.ReportProgress("CgkIutDH9N0BEAIQBg", 100.0f,null);
-		if(PlayerPrefs.GetInt("PlayerScore")>199)
-		Social.ReportProgress("CgkIutDH9N0BEAIQCA", 100.0f,null);
-		if(PlayerPrefs.GetInt("Deaths")>99)
-		Social.ReportProgress("CgkIutDH9N0BEAIQAg", 100.0f,null);
-	#endif
-
-	#if UNITY_IPHONE
-	
-		// Report Score to Leaderboard
-		Social.ReportScore(PlayerPrefs.GetInt("HighScore"), "pfall_leaderboard", null);
-		
-		if(PlayerPrefs.GetInt("PlayerScore")>49)
-		Social.ReportProgress("pfbronze", 100.0f,null);
-		if(PlayerPrefs.GetInt("PlayerScore")>74)
-		Social.ReportProgress("pfsilver", 100.0f,null);
-		if(PlayerPrefs.GetInt("PlayerScore")>99)
-		Social.ReportProgress("pfgold", 100.0f,null);
-		if(PlayerPrefs.GetInt("PlayerScore")>149)
-		Social.ReportProgress("pfplatinum", 100.0f,null);
-		if(PlayerPrefs.GetInt("PlayerScore")>199)
-		Social.ReportProgress("pfinfinity", 100.0f,null);
-		if(PlayerPrefs.GetInt("Deaths")>99)
-		Social.ReportProgress("pfdeaths", 100.0f,null);
-	#endif
+//		if(PlayerPrefs.GetInt("PlayerScore")>49)
+//		Social.ReportProgress("CgkIutDH9N0BEAIQAw", 100.0f,null);
+//		if(PlayerPrefs.GetInt("PlayerScore")>74)
+//		Social.ReportProgress("CgkIutDH9N0BEAIQBA", 100.0f,null);
+//		if(PlayerPrefs.GetInt("PlayerScore")>99)
+//		Social.ReportProgress("CgkIutDH9N0BEAIQBQ", 100.0f,null);
+//		if(PlayerPrefs.GetInt("PlayerScore")>149)
+//		Social.ReportProgress("CgkIutDH9N0BEAIQBg", 100.0f,null);
+//		if(PlayerPrefs.GetInt("PlayerScore")>199)
+//		Social.ReportProgress("CgkIutDH9N0BEAIQCA", 100.0f,null);
+//		if(PlayerPrefs.GetInt("Deaths")>99)
+//		Social.ReportProgress("CgkIutDH9N0BEAIQAg", 100.0f,null);
+//	#endif
+//
+//	#if UNITY_IPHONE
+//	
+//		// Report Score to Leaderboard
+//		Social.ReportScore(PlayerPrefs.GetInt("HighScore"), "pfall_leaderboard", null);
+//		
+//		if(PlayerPrefs.GetInt("PlayerScore")>49)
+//		Social.ReportProgress("pfbronze", 100.0f,null);
+//		if(PlayerPrefs.GetInt("PlayerScore")>74)
+//		Social.ReportProgress("pfsilver", 100.0f,null);
+//		if(PlayerPrefs.GetInt("PlayerScore")>99)
+//		Social.ReportProgress("pfgold", 100.0f,null);
+//		if(PlayerPrefs.GetInt("PlayerScore")>149)
+//		Social.ReportProgress("pfplatinum", 100.0f,null);
+//		if(PlayerPrefs.GetInt("PlayerScore")>199)
+//		Social.ReportProgress("pfinfinity", 100.0f,null);
+//		if(PlayerPrefs.GetInt("Deaths")>99)
+//		Social.ReportProgress("pfdeaths", 100.0f,null);
+//	#endif
 	}
