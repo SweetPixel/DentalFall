@@ -15,7 +15,6 @@ guiscore.active=true;
 	var width = height * Screen.width / Screen.height;
 	var gameW = width / 3.2;
 	var gameH = height / 95;
-	
 
 //	scoretext.transform.localPosition = new Vector3(gameH, gameW+0.1, 0);
 	      //RESET HIGHSCORE
@@ -30,20 +29,29 @@ guiscore.text= score.ToString();
 var temp2 : int;
 PlayerPrefs.SetInt("PlayerScore",score);
 temp2 = PlayerPrefs.GetInt("HighScore");
-if( score > temp2 )
+if( PlayerPrefs.GetInt("PlayerScore") > PlayerPrefs.GetInt("HighScore") )
 {
-//Halloween monster
 PlayerPrefs.SetInt("HighScore",score);
 if ( theDate == "10/31/2014")
 	{
+	//Debug.Log("halloween monster");
+	#if UNITY_ANDROID
 	Social.ReportProgress("CgkIutDH9N0BEAIQDA", 100.0f,null);	
+	#endif
+	#if UNITY_IPHONE
+	Social.ReportProgress("pfhalloweenmonster", 100.0f,null);	
+	#endif
 	}
 }
-//Hatrick hero
+if(score > temp2)
+PlayerPrefs.SetInt("HighScore",score);
+
 
 
 if(score>99)
-guiscore.fontSize = 180;
+guiscore.fontSize = 150;
+if(score>999)
+guiscore.fontSize = 100;
 
 }
 function OnCollisionEnter(col : Collision)

@@ -3,18 +3,21 @@ using System.Collections;
 using GooglePlayGames;
 
 public class ReportAchivments : MonoBehaviour {
-
-	// Use this for initialization
+	int totalgamesplayed;
+		// Use this for initialization
 	void Start () {
-		//Lucky Halloween"
-		string theDate;
-		theDate= System.DateTime.Now.ToString("MM/dd/yyyy");
-		if (theDate == "10/31/2014")
+		totalgamesplayed = PlayerPrefs.GetInt("TotalgamesPlayed");
+		totalgamesplayed++;
+		PlayerPrefs.SetInt("TotalgamesPlayed", totalgamesplayed);
+		if (PlayerPrefs.GetInt("TotalgamesPlayed") >499)
 		{
-
-			Social.ReportProgress("CgkIutDH9N0BEAIQDQ", 100.0f,null);
+	#if UNITY_ANDROID
+			Social.ReportProgress("CgkIutDH9N0BEAIQEQ", 100.0f,null);
+	#endif
+	#if UNITY_IPHONE
+			Social.ReportProgress("pf500games", 100.0f,null);
+	#endif
 		}
-
 	}
 
 	// Update is called once per frame
@@ -32,18 +35,19 @@ public class ReportAchivments : MonoBehaviour {
 			Social.ReportProgress("CgkIutDH9N0BEAIQBQ", 100.0f,null);
 		if(PlayerPrefs.GetInt("PlayerScore")>200)
 			Social.ReportProgress("CgkIutDH9N0BEAIQBg", 100.0f,null);
-		if(PlayerPrefs.GetInt("PlayerScore")>500)
+	if(PlayerPrefs.GetInt("PlayerScore")>500)
 			Social.ReportProgress("CgkIutDH9N0BEAIQDw", 100.0f,null);
-		if(PlayerPrefs.GetInt("PlayerScore")>999)
+	if(PlayerPrefs.GetInt("PlayerScore")>999)
 			Social.ReportProgress("CgkIutDH9N0BEAIQCA", 100.0f,null);
-		if(PlayerPrefs.GetInt("Deaths")>99)
+	if(PlayerPrefs.GetInt("Deaths")>99)
 			Social.ReportProgress("CgkIutDH9N0BEAIQAg", 100.0f,null);
-		if (PlayerPrefs.GetInt("Ducks")>=10)
-			Social.ReportProgress("CgkIutDH9N0BEAIQCg", 100.0f, null);
-		if (PlayerPrefs.GetInt("Ducks")>=100)
-			Social.ReportProgress("CgkIutDH9N0BEAIQCw", 100.0f, null);
-		if (PlayerPrefs.GetInt("Ducks")>=1000)
+	if (PlayerPrefs.GetInt("Deaths")>999)
 			Social.ReportProgress("CgkIutDH9N0BEAIQEA", 100.0f, null);
+		if (PlayerPrefs.GetInt("Ducks")>9)
+			Social.ReportProgress("CgkIutDH9N0BEAIQCg", 100.0f, null);
+		if (PlayerPrefs.GetInt("Ducks")>99)
+			Social.ReportProgress("CgkIutDH9N0BEAIQCw", 100.0f, null);
+
 
 	
 
@@ -59,10 +63,18 @@ public class ReportAchivments : MonoBehaviour {
 			Social.ReportProgress("pfgold", 100.0f,null);
 		if(PlayerPrefs.GetInt("PlayerScore")>200)
 			Social.ReportProgress("pfplatinum", 100.0f,null);
+		if(PlayerPrefs.GetInt("PlayerScore")>500)
+			Social.ReportProgress("pfninjaagility", 100.0f,null);
 		if(PlayerPrefs.GetInt("PlayerScore")>999)
 			Social.ReportProgress("pfinfinity", 100.0f,null);
 		if(PlayerPrefs.GetInt("Deaths")>99)
 			Social.ReportProgress("pfdeaths", 100.0f,null);
+		if (PlayerPrefs.GetInt("Deaths")>999)
+			Social.ReportProgress("pfmilleniumdeaths", 100.0f, null);
+		if (PlayerPrefs.GetInt("Ducks")>9)
+			Social.ReportProgress("pf10ducks", 100.0f, null);
+		if (PlayerPrefs.GetInt("Ducks")>99)
+			Social.ReportProgress("pf100ducks", 100.0f, null);
 		#endif
 
 	}

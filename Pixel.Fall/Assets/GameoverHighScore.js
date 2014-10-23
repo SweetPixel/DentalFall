@@ -14,7 +14,9 @@ var width : float;
 var offset : Vector2;
 var ratio : int;
 var finalSize : int;
-
+var hatrick_achievement : int;
+hatrick_achievement=PlayerPrefs.GetInt("hatrick_achievement");
+var theDate : String ;
 function Start () 
 {
 		if (GoogleAnalytics.instance) {
@@ -92,20 +94,43 @@ nowScore.text=PlayerPrefs.GetInt("PlayerScore")+ " / "+ PlayerPrefs.GetInt("High
 //audio.clip= explosion;
 //audio.Play();
 
-if("PlayerScore" >= 100)
+if(PlayerPrefs.GetInt("PlayerScore") >= 100)
 {
 hatrick_achievement++;
 PlayerPrefs.SetInt("hatrick_achievement",hatrick_achievement);
-if(PlayerPrefs.GetInt("hatrick_achievement")>=3)
-Debug.Log("warkahatrick");
-Debug.Log(hatrick_achievement);
+	if(PlayerPrefs.GetInt("hatrick_achievement") >= 3 )
+	
+		{
+	//Debug.Log("Hatrick hero");
+			#if UNITY_ANDROID	
+			Social.ReportProgress("CgkIutDH9N0BEAIQDg", 100.0f,null);
+			#endif
+			
+			#if UNITY_IPHONE
+			Social.ReportProgress("pfhattrickhero", 100.0f,null);
+			#endif
+		}
 }
-else if(score<100)
+	else if(PlayerPrefs.GetInt("PlayerScore")<100)
 {
 hatrick_achievement=0;
 PlayerPrefs.SetInt("hatrick_achievement",hatrick_achievement);
-
 }
+
+
+//Lucky Halloween
+		
+		theDate= System.DateTime.Now.ToString("MM/dd/yyyy");
+		if (theDate == "10/31/2014")
+		{
+		//Debug.Log("Lucky halloween");
+		#if UNITY_ANDROID
+			Social.ReportProgress("CgkIutDH9N0BEAIQDQ", 100.0f,null);
+		#endif
+		#if UNITY_IPHONE
+		Social.ReportProgress("pfluckyhalloween", 100.0f,null);
+		#endif		
+		}
 
 
 	#if UNITY_ANDROID
