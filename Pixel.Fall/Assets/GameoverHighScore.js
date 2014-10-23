@@ -133,7 +133,7 @@ PlayerPrefs.SetInt("hatrick_achievement",hatrick_achievement);
 		}
 
 
-	#if UNITY_ANDROID
+//	#if UNITY_ANDROID
 		
 		// Report Score to Leaderboard
 		//Social.ReportScore(PlayerPrefs.GetInt("HighScore"), "CgkIutDH9N0BEAIQAA",null);
