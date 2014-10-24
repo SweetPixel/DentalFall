@@ -30,9 +30,9 @@ PlayerPrefs.SetInt("tutorial",count_tut);
 	var gameW = width / 4;
 	hero.transform.localScale = new Vector3(gameW, gameW, 0);
 	enemy1.transform.localScale = new Vector3(gameW, gameW, 0);
-	enemy2.transform.localScale = new Vector3(gameW, gameW, 0);
-	enemy3.transform.localScale = new Vector3(gameW, gameW, 0);
-	enemy4.transform.localScale = new Vector3(gameW, gameW, 0);
+	enemy2.transform.localScale = new Vector3(gameW, gameW*2, 0);
+	enemy3.transform.localScale = new Vector3(gameW*2, gameW*2, 0);
+	enemy4.transform.localScale = new Vector3(gameW*2, gameW*3, 0);
 	
 	Spawn();
 	
@@ -81,9 +81,8 @@ score = PlayerPrefs.GetInt("PlayerScore");
 
 function Spawn(){
 var randomPick : int;
-	for (i=0; i<1000; i++){
+	for (i=0; i<10000; i++){
 		if((score>=0)&&(score<=10))
-		Debug.Log(score);
 		 randomPick = 1;
 		 if((score>10)&&(score<=25))
 		 randomPick = Mathf.Abs(Random.Range(0,3));
