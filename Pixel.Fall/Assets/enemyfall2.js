@@ -113,7 +113,7 @@ else if(randomPick == 2){
 //var forward=transform.TransformDirection(Vector3.down);
 
 			instance=Instantiate(enemy2,pos,Quaternion.identity);
-			instance.transform.Rotate(90,0,0);
+			instance.transform.Rotate(0,180,0);
 }
 else if(randomPick == 3){
 //var forward=transform.TransformDirection(Vector3.down);

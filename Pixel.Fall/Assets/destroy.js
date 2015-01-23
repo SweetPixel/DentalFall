@@ -12,7 +12,7 @@ function Update () {}
 function OnCollisionEnter(col : Collision)
 {
 
-if(col.gameObject.name=="ishape(Clone)"||col.gameObject.name=="squareshape(Clone)"||col.gameObject.name=="Rectangleshape(Clone)"||col.gameObject.name=="deadshape(Clone)"||col.gameObject.name=="floor")
+if(col.gameObject.name=="ishape(Clone)"||col.gameObject.name=="squareshape(Clone)"||col.gameObject.name=="Rectangleshape(Clone)"||col.gameObject.name=="deadshape(Clone)"||col.gameObject.name=="floor"||col.gameObject.name=="chocolate")
 {
 var deaths : int = PlayerPrefs.GetInt("Deaths");
 var ducks : int = PlayerPrefs.GetInt("Ducks");
