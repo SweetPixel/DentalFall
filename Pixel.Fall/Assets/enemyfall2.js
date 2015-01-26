@@ -99,13 +99,13 @@ var pick = Mathf.Abs(Random.Range(0,3));
 
 if(pick ==1)	{
 				instance=Instantiate(enemy1,pos,Quaternion.identity);
-				instance.transform.Rotate(90,0,0);
+				instance.transform.Rotate(0,180,0);
 				Debug.Log(pick);
 				}
 else if (pick == 2)
 				{
 				instance=Instantiate(enemy4,pos,Quaternion.identity);
-				instance.transform.Rotate(90,180,0);
+				instance.transform.Rotate(0,180,0);
 				Debug.Log(pick);
 				}
 }
@@ -113,12 +113,12 @@ else if(randomPick == 2){
 //var forward=transform.TransformDirection(Vector3.down);
 
 			instance=Instantiate(enemy2,pos,Quaternion.identity);
-			instance.transform.Rotate(90,0,0);
+			instance.transform.Rotate(0,180,0);
 }
 else if(randomPick == 3){
 //var forward=transform.TransformDirection(Vector3.down);
 				instance=Instantiate(enemy3,pos,Quaternion.identity);
-				instance.transform.Rotate(90,0,0);
+				instance.transform.Rotate(270,0,0);
 }								
 /*else if(randomPick == 4){
 var forward=transform.TransformDirection(Vector3.down);
