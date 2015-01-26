@@ -59,35 +59,36 @@ function OnCollisionEnter(col : Collision)
 audio.clip = coin;
 audio.Play();
 audio.volume = 1.0;
-if(col.gameObject.name=="ishape(Clone)")
+if(col.gameObject.name=="Donut_1(Clone)")
 {
 Destroy(col.gameObject);
 score++;
 
 }
-if(col.gameObject.name=="ishape")
-{
-Destroy(col.gameObject);
-}
-
-if(col.gameObject.name=="squareshape(Clone)")
+if(col.gameObject.name=="Chocolate(Clone)")
 {
 Destroy(col.gameObject);
 score++;
 }
 
-if(col.gameObject.name=="Rectangleshape(Clone)")
+if(col.gameObject.name=="Donut_2(Clone)")
 {
 Destroy(col.gameObject);
 score++;
 }
-if(col.gameObject.name=="deadshape(Clone)")
+
+if(col.gameObject.name=="IceCream(Clone)")
 {
 Destroy(col.gameObject);
 score++;
 }
-if(col.gameObject.name=="deadshape")
-{
-Destroy(col.gameObject);
-}
+//if(col.gameObject.name=="deadshape(Clone)")
+//{
+//Destroy(col.gameObject);
+//score++;
+//}
+//if(col.gameObject.name=="deadshape")
+//{
+//Destroy(col.gameObject);
+//}
 }
