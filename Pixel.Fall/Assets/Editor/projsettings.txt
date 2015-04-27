@@ -1,6 +1,0 @@
-lastUpgrade=00900
-proj.AppId=59568678970
-android.SetupDone=true
-ios.ClientId=59568678970-5pv3ri1hmp5grl1urilf4noqodfu7j42.apps.googleusercontent.com
-ios.BundleId=com.sps.pxelfall
-ios.SetupDone=true
